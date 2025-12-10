@@ -7,21 +7,32 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Emmanuel – Frontend & AI Engineer",
+    default:
+      "Emmanuel – Frontend & AI Engineer | Web Developer & Next.js Expert",
     template: "%s | Emmanuel",
   },
   description:
-    "Portfolio of Emmanuel, a Frontend Engineer specializing in AI-driven web applications and Next.js development.",
+    "Portfolio of Emmanuel, a Frontend & AI Engineer specializing in Next.js, React, Tailwind CSS, AI-driven web applications, and modern web development solutions. Explore projects, Soloa AI contributions, Cartolinks Solutions work, and professional achievements.",
   keywords: [
     "Frontend Engineer",
     "AI Engineer",
-    "Next.js",
-    "React",
+    "Next.js Developer",
+    "React Developer",
     "Tailwind CSS",
-    "Portfolio",
     "Web Development",
+    "Portfolio",
+    "Fullstack Developer",
+    "JavaScript Developer",
     "Soloa AI",
     "Cartolinks Solutions",
+    "AI Web Applications",
+    "Next.js Projects",
+    "Frontend Performance",
+    "UX/UI Development",
+    "Responsive Web Design",
+    "Web Developer Portfolio",
+    "Professional Web Developer",
+    "Modern Web Technologies",
   ],
   authors: [{ name: "Emmanuel", url: "https://emmanuel-dev-five.vercel.app/" }],
   creator: "Emmanuel",
@@ -36,27 +47,27 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Emmanuel – Frontend & AI Engineer",
+    title: "Emmanuel – Frontend & AI Engineer | Next.js Developer Portfolio",
     description:
-      "Portfolio of Emmanuel, specializing in AI and frontend development with Next.js.",
+      "Explore Emmanuel's portfolio showcasing AI-driven web applications, Soloa AI projects, Cartolinks Solutions work, and expertise in Next.js, React, and Tailwind CSS.",
     url: "https://emmanuel-dev-five.vercel.app/",
     siteName: "Emmanuel Portfolio",
     images: [
       {
-        url: "https://emmanuel-dev-five.vercel.app//og-image.png",
+        url: "https://emmanuel-dev-five.vercel.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Emmanuel Portfolio",
+        alt: "Emmanuel Portfolio - Frontend & AI Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emmanuel – Frontend & AI Engineer",
+    title: "Emmanuel – Frontend & AI Engineer | Next.js Developer Portfolio",
     description:
-      "Portfolio showcasing AI-driven and frontend web projects built with Next.js.",
+      "Showcasing AI-driven web projects, Soloa AI contributions, Cartolinks Solutions work, and frontend development expertise in Next.js and React.",
     creator: "@emmanuel",
-    images: ["https://emmanuel-dev-five.vercel.app//og-image.png"],
+    images: ["https://emmanuel-dev-five.vercel.app/og-image.png"],
   },
   robots: {
     index: true,
