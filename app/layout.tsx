@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     "Soloa AI",
     "Cartolinks Solutions",
   ],
-  authors: [{ name: "Emmanuel", url: "https://emmanuel.com" }],
+  authors: [{ name: "Emmanuel", url: "https://emmanuel-dev-five.vercel.app/" }],
   creator: "Emmanuel",
   publisher: "Emmanuel",
-  metadataBase: new URL("https://emmanuel.com"),
+  metadataBase: new URL("https://emmanuel-dev-five.vercel.app/"),
   alternates: {
-    canonical: "https://emmanuel.com",
+    canonical: "https://emmanuel-dev-five.vercel.app/",
     languages: {
       "en-US": "/en-US",
       "fr-FR": "/fr-FR",
@@ -39,11 +39,11 @@ export const metadata: Metadata = {
     title: "Emmanuel – Frontend & AI Engineer",
     description:
       "Portfolio of Emmanuel, specializing in AI and frontend development with Next.js.",
-    url: "https://emmanuel.com",
+    url: "https://emmanuel-dev-five.vercel.app/",
     siteName: "Emmanuel Portfolio",
     images: [
       {
-        url: "https://emmanuel.com/og-image.png",
+        url: "https://emmanuel-dev-five.vercel.app//og-image.png",
         width: 1200,
         height: 630,
         alt: "Emmanuel Portfolio",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description:
       "Portfolio showcasing AI-driven and frontend web projects built with Next.js.",
     creator: "@emmanuel",
-    images: ["https://emmanuel.com/og-image.png"],
+    images: ["https://emmanuel-dev-five.vercel.app//og-image.png"],
   },
   robots: {
     index: true,
