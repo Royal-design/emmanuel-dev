@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Layout } from "./Layout";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Avatar } from "./Avatar";
 import { TextTypeWriter } from "./TextTypeWriter";
 import { ThemeMode } from "./ThemeMode";
@@ -14,6 +13,8 @@ export const textSequence = [
   "Front-End Engineer",
   2000,
   "Web Developer",
+  2000,
+  "AI Engineer",
   2000,
   "",
 ];
@@ -28,7 +29,6 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
 
   const [activeSection, setActiveSection] = useState("");
 
@@ -40,6 +40,11 @@ export const Navbar = () => {
           const top = section.getBoundingClientRect().top;
           if (top <= 80 && top >= -section.clientHeight + 80) {
             setActiveSection(link.path);
+
+            // Update URL without scrolling
+            if (window.location.hash !== link.path) {
+              window.history.replaceState(null, "", link.path);
+            }
           }
         }
       });
@@ -53,7 +58,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="border-b sticky backdrop-blur-lg bg-background/50 z-50 top-0 w-full border-border">
+      <div className="border-b sticky backdrop-blur-lg bg-background/80 z-50 top-0 w-full border-border">
         <Layout>
           <div className="flex items-center justify-between py-2">
             <Link href="#home">
@@ -158,7 +163,7 @@ export const Navbar = () => {
                     >
                       <Link
                         className={`text-base py-2 px-4 block rounded-lg transition-colors ${
-                          pathname === link.path
+                          activeSection === link.path
                             ? "text-primary-base font-semibold bg-primary-base/10"
                             : "text-foreground hover:text-primary-base hover:bg-primary-base/5"
                         }`}

@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import { CgDebug } from "react-icons/cg";
 import { SiCodeigniter } from "react-icons/si";
 import { IoCodeSlashOutline, IoGitBranchOutline } from "react-icons/io5";
+import { FiDownload } from "react-icons/fi";
+import Link from "next/link";
+import { Stats } from "./Stats";
 
 export const Home = () => {
   return (
@@ -13,7 +16,6 @@ export const Home = () => {
       <Layout className="mt-6">
         <div className="flex flex-col md:flex-row">
           <section className="w-full md:w-3/5">
-            {/* Available Badge */}
             <motion.button
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,6 +63,30 @@ export const Home = () => {
               applications. My love for technology drives me to stay ahead of
               the curve, always learning and embracing new possibilities.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="flex flex-wrap gap-4 mb-6 mt-4"
+            >
+              <Link
+                href="/resume.pdf"
+                className="px-6 inline-flex gap-3 items-center py-3 bg-primary-base text-primary font-medium rounded-lg hover:bg-primary-base/90 transition-colors shadow-lg shadow-primary-base/25"
+              >
+                <FiDownload />
+                Resume
+              </Link>
+              <Link
+                href="/#contact"
+                type="button"
+                className="px-6 py-3 border-2 border-primary-base text-primary-base font-medium rounded-lg hover:bg-primary-base/5 transition-colors"
+              >
+                Get In Touch
+              </Link>
+            </motion.div>
+
+            {/* Stats */}
+            <Stats />
           </section>
 
           <section className="flex-1 mt-12 md:mt-0 flex justify-center md:justify-end items-center">

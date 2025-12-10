@@ -3,6 +3,7 @@ import "./globals.css";
 import { inter } from "./fonts/fonts";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Navbar />
 
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

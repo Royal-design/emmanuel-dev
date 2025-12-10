@@ -35,11 +35,8 @@ export const Services = () => {
         {services.map((service) => (
           <div
             key={service.id}
-            className="p-4 rounded-xl border border-border bg-primary-gray-300/40 
-            hover:border-primary-base hover:shadow-lg transition-all duration-300
-            hover:-translate-y-1 group cursor-pointer"
+            className="p-4 rounded-xl border border-border bg-primary-gray-300/40 hover:border-primary-base/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group cursor-pointer"
           >
-            {/* Icon */}
             <div
               className="text-primary-base mb-4 group-hover:text-primary-base/90 
               transition-all duration-300"
@@ -47,12 +44,10 @@ export const Services = () => {
               {service.icon}
             </div>
 
-            {/* Title */}
             <h3 className="text-lg font-semibold text-primary-base mb-2">
               {service.heading}
             </h3>
 
-            {/* Description */}
             <p className="text-sm text-primary-base/70 leading-relaxed">
               {service.text}
             </p>
