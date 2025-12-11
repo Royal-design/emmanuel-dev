@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     "Next.js Developer",
     "React Developer",
     "Tailwind CSS",
+    "Emmanuel Portfolio",
+    "Emmanuel Oluwaseun",
+    "Oluwaseun",
+    "Olowookere",
+    "Frontend",
     "Web Development",
     "Portfolio",
     "Fullstack Developer",
@@ -34,12 +39,14 @@ export const metadata: Metadata = {
     "Professional Web Developer",
     "Modern Web Technologies",
   ],
-  authors: [{ name: "Emmanuel", url: "https://emmanuel-dev-five.vercel.app/" }],
+  authors: [
+    { name: "Emmanuel", url: "https://emmanuel-developer.vercel.app/" },
+  ],
   creator: "Emmanuel",
   publisher: "Emmanuel",
-  metadataBase: new URL("https://emmanuel-dev-five.vercel.app/"),
+  metadataBase: new URL("https://emmanuel-developer.vercel.app/"),
   alternates: {
-    canonical: "https://emmanuel-dev-five.vercel.app/",
+    canonical: "https://emmanuel-developer.vercel.app/",
     languages: {
       "en-US": "/en-US",
       "fr-FR": "/fr-FR",
@@ -50,11 +57,11 @@ export const metadata: Metadata = {
     title: "Emmanuel – Frontend & AI Engineer | Next.js Developer Portfolio",
     description:
       "Explore Emmanuel's portfolio showcasing AI-driven web applications, Soloa AI projects, Cartolinks Solutions work, and expertise in Next.js, React, and Tailwind CSS.",
-    url: "https://emmanuel-dev-five.vercel.app/",
+    url: "https://emmanuel-developer.vercel.app/",
     siteName: "Emmanuel Portfolio",
     images: [
       {
-        url: "https://emmanuel-dev-five.vercel.app/og-image.png",
+        url: "https://emmanuel-developer.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Emmanuel Portfolio - Frontend & AI Engineer",
@@ -67,7 +74,7 @@ export const metadata: Metadata = {
     description:
       "Showcasing AI-driven web projects, Soloa AI contributions, Cartolinks Solutions work, and frontend development expertise in Next.js and React.",
     creator: "@emmanuel",
-    images: ["https://emmanuel-dev-five.vercel.app/og-image.png"],
+    images: ["https://emmanuel-developer.vercel.app/og-image.png"],
   },
   robots: {
     index: true,

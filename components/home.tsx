@@ -14,7 +14,7 @@ export const Home = () => {
   return (
     <div id="home" className="bg-background py-6">
       <Layout className="mt-6">
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col-reverse md:flex-row">
           <section className="w-full md:w-3/5">
             <motion.button
               initial={{ opacity: 0, y: -20 }}
@@ -89,12 +89,12 @@ export const Home = () => {
             <Stats />
           </section>
 
-          <section className="flex-1 mt-12 md:mt-0 flex justify-center md:justify-end items-center">
+          <section className="flex-1 mt-4 md:mt-0 max-md:mb-12 flex justify-center md:justify-end items-center">
             <motion.figure
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="relative w-[250px] h-[300px] md:w-[300px] md:h-[350px]"
+              className="relative  w-[300px] h-[350px] md:w-[350px] md:h-[400px]"
             >
               <motion.div
                 className="absolute -left-20 top-1/2 -translate-y-1/2 z-20 -rotate-90"
@@ -204,16 +204,15 @@ export const Home = () => {
                 </div>
               </motion.div>
 
-              <div className="relative w-full h-full overflow-hidden bg-linear-to-r p-0.5 rounded-bl-4xl rounded-tr-4xl border border-border from-gradient-start-shape-outer via-gradient-mid-shape-outer to-gradient-end-shape-outer group">
+              <div className="relative w-full h-full overflow-hidden bg-linear-to-r p-0.5 rounded-bl-4xl rounded-tr-4xl from-gradient-start-shape-outer via-gradient-mid-shape-outer to-gradient-end-shape-outer group">
                 <div className="absolute inset-0 bg-linear-to-r from-primary-base/20 via-primary-base/10 to-transparent transform scale-x-[0.0001] origin-left transition-transform duration-500 group-hover:scale-x-100 rounded-bl-4xl rounded-tr-4xl z-1"></div>
-
-                <div className="relative overflow-hidden z-10 h-full bg-background  rounded-bl-4xl rounded-tr-4xl">
+                <div className="relative overflow-hidden border z-10 h-full bg-background  rounded-bl-4xl rounded-tr-4xl">
                   <Image
                     src="/emmy.webp"
                     alt="Emmanuel - Frontend Developer"
                     width={300}
                     height={350}
-                    className="w-full h-full object-cover object-top transform transition-transform duration-500 group-hover:scale-105 rounded-3xl"
+                    className="w-full h-full object-cover  object-top transform transition-transform duration-500 group-hover:scale-105 rounded-bl-4xl rounded-tr-4xl"
                     priority
                   />
                   <div className="absolute inset-0 h-full w-full bg-overlay-image z-50 hover:bg-transparent"></div>

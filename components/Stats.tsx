@@ -65,9 +65,7 @@ export const Stats: React.FC = () => {
       </div>
       <div className="text-center md:text-left">
         <Counter target={769} suffix="+" />
-        <p className="text-xs md:text-sm text-secondary-gray">
-          Project Contributions
-        </p>
+        <p className="text-xs md:text-sm text-secondary-gray">Contributions</p>
       </div>
     </motion.div>
   );

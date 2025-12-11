@@ -10,9 +10,11 @@ export const Footer = () => {
   return (
     <footer className="bg-background border-t">
       <Layout className="py-6">
-        <div className="grid md:grid-cols-2 gap-12 mb-6">
+        <div className="grid md:grid-cols-2 gap-10 mb-6">
+          {/* LEFT */}
           <div>
             <h3 className="text-2xl font-semibold text-white mb-3">Emmanuel</h3>
+
             <p className="text-sm text-primary-base/70 mb-4">
               Frontend Engineer
             </p>
@@ -22,8 +24,8 @@ export const Footer = () => {
               and love taking on new challenges.
             </p>
 
-            <div className="flex bg-primary-gray-300 w-fit rounded-full p-0.5 px-1 hover:opacity-80 items-center gap-2">
-              <div className="w-2 h-2  bg-green-500 rounded-full animate-pulse"></div>
+            <div className="flex bg-primary-gray-300 w-fit rounded-full px-2 py-1 hover:opacity-80 items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span className="text-sm text-primary-base/70">
                 Available for opportunities
               </span>
@@ -32,15 +34,15 @@ export const Footer = () => {
 
           <div className="md:text-right">
             <h3 className="text-xl font-semibold text-primary-base mb-4">
-              {` Let's Connect`}
+              Let’s Connect
             </h3>
 
-            <div className="flex md:justify-end gap-4 mb-8">
+            <div className="flex flex-wrap md:justify-end gap-3 mb-8">
               <Link
                 href="https://github.com/Royal-design"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition-all duration-300 text-primary-base/70 group"
+                className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition text-primary-base/70"
               >
                 <FaGithub className="w-4 h-4" />
                 <span className="text-sm font-medium">GitHub</span>
@@ -50,7 +52,7 @@ export const Footer = () => {
                 href="https://www.linkedin.com/in/emmanuel-olowookere-869262216"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition-all duration-300 text-primary-base/70 group"
+                className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition text-primary-base/70"
               >
                 <FaLinkedinIn className="w-4 h-4" />
                 <span className="text-sm font-medium">LinkedIn</span>
@@ -58,7 +60,7 @@ export const Footer = () => {
 
               <Link
                 href="mailto:royaldesign1999@gmail.com"
-                className="flex items-center gap-2 px-4 py-2.5 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition-all duration-300 text-primary-base/70 group"
+                className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition text-primary-base/70"
               >
                 <Mail className="w-4 h-4" />
                 <span className="text-sm font-medium">Email</span>
@@ -67,8 +69,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-4 border-t  flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-4 border-t flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-base/70">
             © {new Date().getFullYear()} Emmanuel. Built using Next.js
           </p>
