@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { inter } from "./fonts/fonts";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 export const metadata: Metadata = {
   title: {
@@ -113,9 +113,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <ErrorBoundary>{children}</ErrorBoundary>
         </ThemeProvider>
       </body>
     </html>
