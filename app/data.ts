@@ -49,11 +49,12 @@ export const experiences = [
     company: "Petabyte Esports",
     duration: "June 2025 - December 2025",
     details: [
-      "Leading frontend development of the ATIRC website, a platform to empower young African minds, featuring modules for jobs, research, incubation, and internship opportunities.",
-      "Contributing to both the ATIRC and Petabyte Esports Gaming & Interactive Entertainment Platforms, focused on esports, social engagement, and youth-centered digital experiences.",
-      "Built responsive UIs from Figma mockups and connected APIs to power real-time functionality",
+      "Led frontend development of the ATIRC website, a platform that empowered young African minds, featuring modules for jobs, research, incubation, and internship opportunities.",
+      "Contributed to both the ATIRC and Petabyte Esports Gaming & Interactive Entertainment Platforms, focused on esports, social engagement, and youth-centered digital experiences.",
+      "Built responsive UIs from Figma mockups and connected APIs to enable real-time functionality.",
     ],
   },
+
   {
     title: "Frontend Developer",
     company: "Vynix Lab",
