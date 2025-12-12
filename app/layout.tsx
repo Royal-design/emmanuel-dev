@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { inter } from "./fonts/fonts";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/react";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
@@ -110,6 +111,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ErrorBoundary>{children}</ErrorBoundary>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
