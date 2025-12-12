@@ -63,7 +63,7 @@ export const AboutMe = () => {
             className="px-2 py-2 max-md:py-1 rounded-md bg-primary-gray-300 text-secondary-gray text-sm"
           >
             {label}:{" "}
-            <span className="font-medium text-primary-base/80 max-md:block max-md:text-xs whitespace-normal">
+            <span className="font-medium wrap-break-word text-primary-base/80 max-md:block max-md:text-xs whitespace-normal">
               {value}
             </span>
           </div>
