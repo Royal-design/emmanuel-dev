@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { Layout } from "./Layout";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -10,6 +10,7 @@ import { FiGithub } from "react-icons/fi";
 import { otherProjects, projects } from "@/app/data";
 
 export const Projects = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: false, dragFree: true, align: "start" },
     [Autoplay({ delay: 4000, stopOnInteraction: false })]
@@ -46,12 +47,18 @@ export const Projects = () => {
                   className="group p-6 hover:border-primary-base/40 duration-300 flex flex-col rounded-xl bg-primary-gray-300/40 border border-primary-gray-300 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
                 >
                   <div className="relative overflow-hidden border rounded-lg mb-4 bg-primary-gray-300/60 aspect-video">
+                    {isLoading && (
+                      <div className="absolute inset-0 bg-gray-100 dark:bg-background/80 animate-pulse" />
+                    )}
                     <Image
                       src={project.imageLink}
                       alt={project.title}
                       width={1000}
                       height={1000}
-                      className="w-full hover:scale-[1.02] transition-all duration-200 h-full object-cover"
+                      className={`w-full hover:scale-[1.02] transition-all duration-200 h-full object-cover ${
+                        isLoading ? "opacity-0" : "opacity-100"
+                      }`}
+                      onLoad={() => setIsLoading(false)}
                     />
                   </div>
 
@@ -119,12 +126,18 @@ export const Projects = () => {
                       className="min-w-[350px] max-w-[350px] shrink-0 ml-4 group p-4 rounded-xl bg-primary-gray-300/40 border border-primary-gray-300 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
                     >
                       <div className="relative overflow-hidden border rounded-lg mb-3 bg-primary-gray-300/60 h-[200px]">
+                        {isLoading && (
+                          <div className="absolute inset-0 bg-gray-100 dark:bg-background/80 animate-pulse" />
+                        )}
                         <Image
                           src={project.imageLink}
                           alt={project.title}
                           width={1000}
                           height={1000}
-                          className="w-full h-full object-cover object-top"
+                          className={`w-full h-full object-cover object-top ${
+                            isLoading ? "opacity-0" : "opacity-100"
+                          }`}
+                          onLoad={() => setIsLoading(false)}
                         />
                       </div>
 
