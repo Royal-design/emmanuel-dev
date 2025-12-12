@@ -123,7 +123,7 @@ export const Projects = () => {
                   {otherProjects.concat(otherProjects).map((project, index) => (
                     <div
                       key={index}
-                      className="min-w-[350px] max-w-[350px] shrink-0 ml-4 group p-4 rounded-xl bg-primary-gray-300/40 border border-primary-gray-300 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
+                      className="min-w-[300px] max-w-[300px] md:min-w-[350px] md:max-w-[350px] shrink-0 ml-4 group p-4 rounded-xl bg-primary-gray-300/40 border border-primary-gray-300 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
                     >
                       <div className="relative overflow-hidden border rounded-lg mb-3 bg-primary-gray-300/60 h-[200px]">
                         {isLoading && (
@@ -190,7 +190,7 @@ export const Projects = () => {
                 type="button"
                 onClick={scrollPrev}
                 aria-label="back button"
-                className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-primary-gray-300/60 p-2 rounded-full shadow hover:bg-primary-gray-300 transition z-10"
+                className="absolute top-1/2 max-md:hidden -left-4 transform -translate-y-1/2 bg-primary-gray-300/60 p-2 rounded-full shadow hover:bg-primary-gray-300 transition z-10"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -198,10 +198,29 @@ export const Projects = () => {
                 type="button"
                 aria-label="next label"
                 onClick={scrollNext}
-                className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-primary-gray-300/60 p-2 rounded-full shadow hover:bg-primary-gray-300 transition z-10"
+                className="absolute top-1/2 max-md:hidden -right-4 transform -translate-y-1/2 bg-primary-gray-300/60 p-2 rounded-full shadow hover:bg-primary-gray-300 transition z-10"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
+
+              <div className="flex justify-center gap-2 mt-4">
+                <button
+                  type="button"
+                  onClick={scrollPrev}
+                  aria-label="back button"
+                  className="md:hidden transform bg-primary-gray-300/60 p-2 rounded-full shadow hover:bg-primary-gray-300 transition z-10"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="next label"
+                  onClick={scrollNext}
+                  className="md:hidden transform bg-primary-gray-300/60 p-2 rounded-full shadow hover:bg-primary-gray-300 transition z-10"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </section>
         </div>
