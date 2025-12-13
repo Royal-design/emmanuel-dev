@@ -24,7 +24,7 @@ export default function ScrollToTop() {
       type="button"
       onClick={scrollToTop}
       aria-label="scroll top"
-      className="flex items-center gap-2 px-4 py-2.5 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-full h-12 w-12 transition-all duration-300 text-primary-base/70 group fixed bottom-12 right-6 z-50"
+      className="flex items-center gap-2 px-4 py-2.5 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-full h-12 w-12 transition-all duration-300 text-primary-base/70 group fixed bottom-12 right-6 z-40"
     >
       <ArrowUp className="" />
     </button>

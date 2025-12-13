@@ -128,7 +128,7 @@ export const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-lg z-40"
+              className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-lg z-50"
               onClick={() => setIsMenuOpen(false)}
             />
 

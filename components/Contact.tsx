@@ -51,7 +51,9 @@ const ContactItem: React.FC<ContactItemProps> = ({
 
       <div className="min-w-0">
         <p className="text-sm text-primary-base/60 mb-0.5">{label}</p>
-        <p className="text-primary-base font-medium wrap-break-word">{value}</p>
+        <p className="text-primary-base max-sm:text-sm font-medium wrap-break-word">
+          {value}
+        </p>
       </div>
     </div>
 
@@ -81,7 +83,6 @@ const InfoItem: React.FC<InfoItemProps> = ({
   </div>
 );
 
-/* ---------------- MAIN COMPONENT ---------------- */
 export const Contact: React.FC = () => {
   return (
     <div className="bg-secondary py-24" id="contact">
