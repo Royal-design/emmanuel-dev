@@ -42,7 +42,7 @@ const ContactItem: React.FC<ContactItemProps> = ({
     href={href}
     target={href.startsWith("http") ? "_blank" : undefined}
     rel="noopener noreferrer"
-    className="group flex items-center justify-between p-4 rounded-xl bg-primary-gray-300/60 border border-primary-gray-300/40 hover:bg-primary-gray-300 transition-all w-full min-w-0 overflow-hidden"
+    className="group flex items-center justify-between p-2 md:p-4 rounded-xl bg-primary-gray-300/60 border border-primary-gray-300/40 hover:bg-primary-gray-300 transition-all w-full min-w-0 overflow-hidden"
   >
     <div className="flex items-center gap-4 min-w-0">
       <div className="shrink-0 w-12 h-12 rounded-full bg-primary-base/10 flex items-center justify-center">
