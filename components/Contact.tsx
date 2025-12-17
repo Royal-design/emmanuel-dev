@@ -42,7 +42,7 @@ const ContactItem: React.FC<ContactItemProps> = ({
     href={href}
     target={href.startsWith("http") ? "_blank" : undefined}
     rel="noopener noreferrer"
-    className="group flex items-center justify-between p-2 md:p-4 rounded-xl bg-primary-gray-300/60 border border-primary-gray-300/40 hover:bg-primary-gray-300 transition-all w-full min-w-0 overflow-hidden"
+    className="group flex items-center justify-between gap-4 p-2 md:p-4 rounded-xl bg-primary-gray-300/60 border border-primary-gray-300/40 hover:bg-primary-gray-300 transition-all w-full min-w-0 overflow-hidden"
   >
     <div className="flex items-center gap-4 min-w-0">
       <div className="shrink-0 w-12 h-12 rounded-full bg-primary-base/10 flex items-center justify-center">
@@ -111,10 +111,10 @@ export const Contact: React.FC = () => {
 
             <div className="space-y-4 mb-8">
               <ContactItem
-                href="mailto:royaldesign1999@gmail.com"
+                href="mailto:olowookereoluwaseun25@gmail.com"
                 icon={Mail}
                 label="Email"
-                value="royaldesign1999@gmail.com"
+                value="olowookereoluwaseun25@gmail.com"
               />
 
               <ContactItem
@@ -142,7 +142,7 @@ export const Contact: React.FC = () => {
             {/* ACTION BUTTONS */}
             <div className="space-y-3 mt-auto">
               <Link
-                href="mailto:royaldesign1999@gmail.com"
+                href="mailto:olowookereoluwaseun25@gmail.com"
                 className="w-full flex items-center justify-center gap-2 py-3.5 dark:bg-primary-base bg-secondary-gray text-primary rounded-xl hover:opacity-90 transition-opacity font-medium"
               >
                 <Mail className="w-5 h-5" />
