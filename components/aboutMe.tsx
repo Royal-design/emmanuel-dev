@@ -18,13 +18,13 @@ const ABOUT_INFO = [
   { label: "Phone", value: "(+234) 915 187 9027" },
   { label: "Experience", value: "3+ Years" },
   { label: "Nationality", value: "Nigerian" },
-  { label: "Email", value: "royaldesign1999@gmail.com" },
+  { label: "Email", value: "olowookereoluwaseun25@gmail" },
   { label: "Language", value: "English, Yoruba" },
 ];
 
 export const AboutMe = () => {
   return (
-    <div className="flex-1/2">
+    <div className="md:flex-[60%]">
       <div className="inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-primary-gray-300 text-primary-base mb-3">
         <Image
           src="/handwave.webp"

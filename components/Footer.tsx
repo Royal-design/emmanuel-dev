@@ -59,7 +59,7 @@ export const Footer = () => {
               </Link>
 
               <Link
-                href="mailto:royaldesign1999@gmail.com"
+                href="mailto:olowookereoluwaseun25@gmail"
                 className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition text-primary-base/70"
               >
                 <Mail className="w-4 h-4" />
