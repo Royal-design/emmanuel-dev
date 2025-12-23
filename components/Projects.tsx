@@ -26,7 +26,7 @@ export const Projects = () => {
   );
 
   return (
-    <div className="bg-background py-24" id="projects">
+    <div className="bg-background py-6 md:py-12 scroll-mt-16" id="projects">
       <Layout className="md:w-[80%]">
         <div className="space-y-16">
           {/* Featured Projects Section */}

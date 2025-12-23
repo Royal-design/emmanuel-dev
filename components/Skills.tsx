@@ -65,7 +65,7 @@ export const softSkills = [
 
 export const Skills = () => {
   return (
-    <div className="bg-background py-24" id="skills">
+    <div className="bg-background py-6 md:py-12 scroll-mt-16" id="skills">
       <Layout className="md:w-[80%]">
         <h2 className="text-3xl md:text-4xl font-semibold text-primary-base">
           Skills & Expertise

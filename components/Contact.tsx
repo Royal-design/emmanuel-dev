@@ -85,7 +85,7 @@ const InfoItem: React.FC<InfoItemProps> = ({
 
 export const Contact: React.FC = () => {
   return (
-    <div className="bg-secondary py-24" id="contact">
+    <div className="bg-secondary py-6 md:py-12 scroll-mt-16" id="contact">
       <Layout>
         {/* Header */}
         <div className="text-center mb-16 px-3">

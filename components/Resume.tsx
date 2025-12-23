@@ -4,7 +4,7 @@ import { GraduationCap, Calendar, ChevronRight } from "lucide-react";
 
 export const Resume = () => {
   return (
-    <div className="bg-secondary py-24" id="resume">
+    <div className="bg-secondary py-6 md:py-12 scroll-mt-16" id="resume">
       <Layout className="md:w-[80%]">
         <div className="space-y-16">
           {/* Experience Section */}

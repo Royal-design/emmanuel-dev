@@ -15,7 +15,7 @@ export default function LandingPage() {
     <div>
       <Navbar />
       <Home />
-      <div className="bg-secondary py-24" id="about">
+      <div className="bg-secondary py-12 scroll-mt-16" id="about">
         <Layout className="flex flex-col md:flex-row gap-8 md:gap-12">
           <AboutMe />
           <Services />

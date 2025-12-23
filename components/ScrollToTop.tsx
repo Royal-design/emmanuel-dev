@@ -7,8 +7,19 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 300);
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      const isAtBottom = scrollTop + windowHeight >= documentHeight - 50;
+
+      if (scrollTop > 300 && !isAtBottom) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
