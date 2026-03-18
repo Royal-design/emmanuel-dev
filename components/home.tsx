@@ -32,7 +32,7 @@ export const Home = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-base mb-2"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-base mb-2"
             >
               Emmanuel
             </motion.h1>
@@ -220,7 +220,7 @@ export const Home = () => {
                 <div className="absolute inset-0 bg-linear-to-r from-primary-base/20 via-primary-base/10 to-transparent transform scale-x-[0.0001] origin-left transition-transform duration-500 group-hover:scale-x-100 rounded-bl-4xl rounded-tr-4xl z-1"></div>
                 <div className="relative overflow-hidden border z-10 h-full bg-background  rounded-bl-4xl rounded-tr-4xl">
                   <Image
-                    src="/emmy.webp"
+                    src="/portrait1.webp"
                     alt="Emmanuel - Frontend Developer"
                     width={300}
                     height={350}
