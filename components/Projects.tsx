@@ -8,33 +8,17 @@ import { useCallback, useState } from "react";
 import { FiGithub, FiInfo } from "react-icons/fi";
 import { Layout } from "./Layout";
 
-type ProjectCategory = "all" | "full-stack" | "ai" | "practice";
+type ProjectCategory = "all" | "frontend" | "full-stack" | "ai";
 
 const categories: { key: ProjectCategory; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "full-stack", label: "Full-Stack" },
+  { key: "frontend", label: "Frontend" },
+  { key: "full-stack", label: "Full Stack" },
   { key: "ai", label: "AI Projects" },
-  { key: "practice", label: "Experiments" },
 ];
 
-// Categorize projects
-const categorizedProjects = {
-  "full-stack": projects.filter((p) =>
-    [
-      "Global Tech Ecommerce",
-      "Home of Design Furniture",
-      "Movielux",
-      "BeepME – Real-Time Chat App",
-    ].includes(p.title),
-  ),
-  ai: projects.filter(
-    (p) =>
-      p.title.includes("AI") ||
-      p.title.includes("Ninja") ||
-      p.title.includes("ChattyBee"),
-  ),
-  practice: otherProjects,
-};
+// Combine all projects
+const allProjects = [...projects, ...otherProjects];
 
 // Modal Component
 const ProjectModal = ({
@@ -54,7 +38,7 @@ const ProjectModal = ({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-background rounded-xl border border-primary-gray-300/40 shadow-xl"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto  bg-background rounded-xl border border-primary-gray-300/40 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -109,15 +93,17 @@ const ProjectModal = ({
               <ExternalLink className="w-4 h-4" />
               Live Demo
             </a>
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-primary-gray-300/40 text-primary-base text-sm rounded-lg border border-primary-gray-300/40 hover:bg-primary-gray-300/60 transition-colors"
-            >
-              <FiGithub className="w-4 h-4" />
-              View Code
-            </a>
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-primary-gray-300/40 text-primary-base text-sm rounded-lg border border-primary-gray-300/40 hover:bg-primary-gray-300/60 transition-colors"
+              >
+                <FiGithub className="w-4 h-4" />
+                View Code
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -208,17 +194,20 @@ const ProjectCard = ({
           <ExternalLink className="w-3 h-3" />
           Live
         </a>
-        <a
-          href={project.githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex items-center gap-1.5 bg-primary-gray-300/40 text-primary-base rounded border border-primary-gray-300/40 hover:bg-primary-gray-300/60 transition-colors ${
-            compact ? "px-2.5 py-1 text-xs" : "px-3 py-1.5 text-sm"
-          }`}
-        >
-          <FiGithub className="w-3 h-3" />
-          Code
-        </a>
+        {project.githubLink && (
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-center gap-1.5 bg-primary-gray-300/40 text-primary-base rounded border border-primary-gray-300/40 hover:bg-primary-gray-300/60 transition-colors ${
+              compact ? "px-2.5 py-1 text-xs" : "px-3 py-1.5 text-sm"
+            }`}
+          >
+            <FiGithub className="w-3 h-3" />
+            Code
+          </a>
+        )}
+
         <button
           onClick={onInfoClick}
           className={`ml-auto p-1.5 rounded-full bg-primary-gray-300/40 text-primary-base hover:bg-primary-base hover:text-primary transition-colors ${
@@ -336,10 +325,11 @@ export const Projects = () => {
     if (activeCategory === "all") {
       return { main: projects, practice: otherProjects };
     }
-    if (activeCategory === "practice") {
-      return { main: [], practice: otherProjects };
-    }
-    return { main: categorizedProjects[activeCategory] || [], practice: [] };
+
+    return {
+      main: allProjects.filter((p) => p.category === activeCategory),
+      practice: [],
+    };
   };
 
   const filtered = getFilteredProjects();
@@ -397,8 +387,7 @@ export const Projects = () => {
             {/* Practice/Experiments */}
             {filtered.practice.length > 0 && (
               <div>
-                {(activeCategory === "all" ||
-                  activeCategory === "practice") && (
+                {activeCategory === "all" && (
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mb-4">
                     {activeCategory === "all"
                       ? "Experiments & Practice"

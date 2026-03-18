@@ -1,13 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import { Layout } from "./Layout";
 import { motion } from "framer-motion";
-import { CgDebug } from "react-icons/cg";
-import { SiCodeigniter } from "react-icons/si";
-import { IoCodeSlashOutline, IoGitBranchOutline } from "react-icons/io5";
-import { FiDownload } from "react-icons/fi";
+import Image from "next/image";
 import Link from "next/link";
+import { CgDebug } from "react-icons/cg";
+import { FiDownload } from "react-icons/fi";
+import { IoCodeSlashOutline, IoGitBranchOutline } from "react-icons/io5";
+import { SiCodeigniter } from "react-icons/si";
+import { Layout } from "./Layout";
 import { Stats } from "./Stats";
 
 export const Home = () => {
@@ -28,16 +28,28 @@ export const Home = () => {
               </span>
               {`Hello, I'm`}
             </motion.button>
-
-            <motion.h2
-              initial={{ opacity: 0, x: -30 }}
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-9xl font-poppins font-bold text-primary-base mb-2"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-base mb-2"
             >
-              Emmanuel.
+              Emmanuel
+            </motion.h1>
+
+            {/* Title */}
+
+            {/* Role */}
+            <motion.h2
+              initial={{ opacity: 0, x: -25 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="text-primary-base/80 text-lg md:text-xl font-medium mb-1"
+            >
+              Frontend Engineer
             </motion.h2>
 
+            {/* Tagline */}
             <motion.h3
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -53,7 +65,7 @@ export const Home = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="w-full font-dm-sans md:w-[85%] lg:w-[85%] text-base md:text-lg leading-relaxed text-primary-gray"
             >
-              I am a frontend developer based in Ibadan, Nigeria. Where I turn{" "}
+              I am a frontend developer based in Nigeria. Where I turn{" "}
               <span className="font-semibold text-primary-base">ideas</span>{" "}
               into{" "}
               <span className="font-semibold text-primary-base">

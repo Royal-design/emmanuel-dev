@@ -34,7 +34,7 @@ const contactLinks = [
 ];
 
 const infoItems = [
-  { icon: FiMapPin, label: "Location", value: "Ibadan, Nigeria" },
+  { icon: FiMapPin, label: "Location", value: "Nigeria" },
   { icon: FiClock, label: "Response Time", value: "Within 24 hours" },
   { icon: FiGlobe, label: "Remote", value: "Available worldwide" },
 ];

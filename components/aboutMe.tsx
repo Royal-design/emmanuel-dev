@@ -19,7 +19,7 @@ const personalInfo = [
   { icon: FiUser, label: "Name", value: "Olowookere Oluwaseun" },
   { icon: FiMail, label: "Email", value: "olowookereoluwaseun25@gmail.com" },
   { icon: FiPhone, label: "Phone", value: "(+234) 915 187 9027" },
-  { icon: FiMapPin, label: "Location", value: "Ibadan, Nigeria" },
+  { icon: FiMapPin, label: "Location", value: "Nigeria" },
   { icon: FiClock, label: "Experience", value: "3+ Years" },
   { icon: FiGlobe, label: "Languages", value: "English, Yoruba" },
 ];
@@ -78,7 +78,7 @@ export const AboutMe = () => {
               <p className="text-[10px] uppercase tracking-wider text-primary-base/40">
                 {label}
               </p>
-              <p className="text-xs font-medium text-primary-base/80 truncate">
+              <p className="text-xs font-medium text-primary-base/80 wrap-break-word">
                 {value}
               </p>
             </div>

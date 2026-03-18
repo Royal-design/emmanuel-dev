@@ -9,6 +9,7 @@ import {
   SiPostman,
   SiRedux,
   SiShadcnui,
+  SiSupabase,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
@@ -47,6 +48,7 @@ const skillCategories = [
       { name: "Azure DevOps", icon: VscAzureDevops, color: "#0078D7" },
       { name: "Postman", icon: SiPostman, color: "#FF6C37" },
       { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
     ],
   },
 ];
@@ -117,7 +119,7 @@ export const Skills = () => {
             </span>
             {softSkills.map((skill, index) => (
               <span
-                key={skill}
+                key={index}
                 className="text-xs text-primary-base/70 before:content-['·'] before:mr-1.5 before:text-primary-base/30"
               >
                 {skill}

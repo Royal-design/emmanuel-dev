@@ -90,8 +90,46 @@ export const experiences = [
 
 export const projects = [
   {
+    id: 22,
+    title: "Soloa AI Platform",
+    category: "full-stack",
+    description: `Soloa AI is an all-in-one AI platform that unifies multiple AI models and tools into a single seamless interface. Users can generate text, images, videos, and audio, interact with advanced AI chat models, and manage creative workflows without switching between applications. The platform features secure authentication, database management, and real-time capabilities powered by Supabase, alongside integrated payments using Stripe for subscriptions and usage-based billing.`,
+    projectLink: "https://www.soloa.ai/",
+    githubLink: null,
+    imageLink: "/soloa.webp",
+    techStacks: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Supabase",
+      "Stripe",
+      "AI Integration",
+      "API Handling",
+      "State Management",
+      "Framer Motion",
+    ],
+  },
+  {
+    id: 33,
+    title: "EFCC LMS Platform",
+    category: "full-stack",
+    description: `The EFCC LMS is a learning management system designed to support training and capacity development for personnel within the Economic and Financial Crimes Commission (EFCC). The platform enables users to access courses, track learning progress, complete assessments, and engage in structured digital training programs. It focuses on scalable content delivery, user management, and an intuitive dashboard for efficient learning experience.`,
+    projectLink: "https://lms.efcc.gov.ng/dashboard",
+    githubLink: null,
+    imageLink: "/efcc.webp",
+    techStacks: [
+      "React.js",
+      "Tailwind",
+      "Authentication",
+      "Dashboard UI",
+      "API Integration",
+      "State Management",
+    ],
+  },
+  {
     id: 1,
     title: "Global Tech Ecommerce",
+    category: "frontend",
     description: `Global Tech Ecommerce is a responsive web app for exploring and buying tech gadgets. It features product filtering, cart/wishlist, Firebase authentication, state management with Redux Toolkit, and form validation using Zod.`,
     projectLink: "https://global-tech-ecommerce.vercel.app/",
     githubLink: "https://github.com/Royal-design/global-tech",
@@ -109,9 +147,11 @@ export const projects = [
       "Stripe",
     ],
   },
+
   {
     id: 7,
     title: "Movielux",
+    category: "frontend",
     description: `MovieLux is a modern movie discovery web application built with React and TypeScript. It leverages the TMDB (The Movie Database) API to provide up-to-date movie information, and uses Redux Toolkit Query (RTK Query) for efficient and optimized data fetching and state management.`,
     projectLink: "https://movielux.vercel.app/",
     githubLink: "https://github.com/Royal-design/movielux",
@@ -126,9 +166,11 @@ export const projects = [
       "TMDB API",
     ],
   },
+
   {
     id: 2,
     title: "Home of Design Furniture",
+    category: "full-stack",
     description: `Home of Design Furniture is a sleek and modern online furniture store that offers a seamless shopping experience across all devices. Customers can browse products, read reviews, manage their cart, and securely complete dummy purchases.`,
     projectLink: "https://home-of-design.vercel.app/",
     githubLink: "https://github.com/Royal-design/home-of-design",
@@ -149,6 +191,7 @@ export const projects = [
   {
     id: 3,
     title: "Ninja.Translator – AI Text Assistant",
+    category: "ai",
     description: `Ninja.Translator is a smart, intuitive AI interface designed to streamline multilingual communication. Built with a sleek chat-style UI, it allows users to translate text into different languages and summarize lengthy content with ease, it is powered by Gemini AI models.`,
     projectLink: "https://codeninja-ai.vercel.app/",
     githubLink: "https://github.com/Royal-design/ninja-ai",
@@ -166,6 +209,7 @@ export const projects = [
   {
     id: 4,
     title: "ChattyBee AI — Chat Assistant",
+    category: "ai",
     description: `ChattyBee AI is a smart, web-based chat assistant that generates context-aware responses based on user input. Its primary focus is to simulate natural, human-like conversations with AI in a smooth and engaging interface.`,
     projectLink: "https://chatty-bee-ai.vercel.app/",
     githubLink: "https://github.com/Royal-design/chatty-bee-ai",
@@ -183,6 +227,7 @@ export const projects = [
   {
     id: 5,
     title: "BeepME – Real-Time Chat App",
+    category: "full-stack",
     description: `BeepME is a real-time chat application built with React and Firebase, designed to offer a fast, seamless, and modern messaging experience. It features secure user authentication (email/password and Google login), real-time messaging powered by Firebase`,
     projectLink: "https://beep-me.vercel.app/",
     githubLink: "https://github.com/Royal-design/BeepME",
@@ -199,6 +244,7 @@ export const projects = [
   {
     id: 6,
     title: "Corex Metaverse: The Virtual Revolution",
+    category: "frontend",
     description: `Corex Metaverse is a futuristic event website built to simulate the experience of a virtual tech expo. It features a sleek neon-themed UI and an intuitive multi-step ticket generation system. Users can choose their ticket type, fill in personal details, and generate a personalized digital ticket, all with smooth form validation and persistent state handling`,
     projectLink: "https://metaverse-corex-event.vercel.app/",
     githubLink: "https://github.com/Royal-design/metaverse-event",
@@ -218,6 +264,7 @@ export const otherProjects = [
   {
     id: 1,
     title: "Taskify",
+    category: "practice",
     description: `Taskify is a clean, responsive task manager that lets users create, edit, and delete daily goals with ease.`,
     projectLink: "https://task-manager-ecru-pi-75.vercel.app/",
     githubLink: "https://github.com/Royal-design/task-manager",
@@ -227,6 +274,7 @@ export const otherProjects = [
   {
     id: 2,
     title: "Clothing Store",
+    category: "practice",
     description: `SimpleCloth is a basic clothing store app built with React & TypeScript, featuring a clean layout, cart functionality, and responsive design.`,
     projectLink: "https://clothing-store-jade.vercel.app/",
     githubLink: "https://github.com/Royal-design/shopping-cart",
@@ -236,6 +284,7 @@ export const otherProjects = [
   {
     id: 3,
     title: "CGPA Calculator",
+    category: "practice",
     description: `A responsive CGPA calculator built with React, TypeScript & Chakra UI. Easily compute your GPA by entering course units and grades.`,
     projectLink: "https://cgpa-calculator-one-wheat.vercel.app/",
     githubLink: "https://github.com/Royal-design/cgpacalculator",
@@ -245,6 +294,7 @@ export const otherProjects = [
   {
     id: 4,
     title: "Basic Calculator",
+    category: "practice",
     description: `A basic calculator built with HTML, CSS & JavaScript for simple arithmetic operations.`,
     projectLink: "https://calculator-eight-beta-25.vercel.app/",
     githubLink: "https://github.com/Royal-design/codsoft_3",

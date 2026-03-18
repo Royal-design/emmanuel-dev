@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 interface CounterProps {
@@ -64,7 +64,7 @@ export const Stats: React.FC = () => {
         </p>
       </div>
       <div className="text-center md:text-left">
-        <Counter target={769} suffix="+" />
+        <Counter target={1324} suffix="+" />
         <p className="text-xs md:text-sm text-secondary-gray">Contributions</p>
       </div>
     </motion.div>

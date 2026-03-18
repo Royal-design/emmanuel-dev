@@ -1,82 +1,85 @@
 "use client";
 
-import React from "react";
-import { Mail } from "lucide-react";
-import { Layout } from "./Layout";
 import Link from "next/link";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FiGithub, FiHeart, FiLinkedin, FiMail } from "react-icons/fi";
+import { Layout } from "./Layout";
+
+const socialLinks = [
+  { href: "https://github.com/Royal-design", icon: FiGithub, label: "GitHub" },
+  {
+    href: "https://www.linkedin.com/in/emmanuel-olowookere-869262216",
+    icon: FiLinkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "mailto:olowookereoluwaseun25@gmail.com",
+    icon: FiMail,
+    label: "Email",
+  },
+];
 
 export const Footer = () => {
-  return (
-    <footer className="bg-background border-t">
-      <Layout className="py-6">
-        <div className="grid md:grid-cols-2 gap-10 mb-6">
-          {/* LEFT */}
-          <div>
-            <h3 className="text-2xl font-semibold text-white mb-3">Emmanuel</h3>
+  const currentYear = new Date().getFullYear();
 
-            <p className="text-sm text-primary-base/70 mb-4">
+  return (
+    <footer className="bg-background border-t border-primary-gray-300">
+      <Layout className="py-4 md:w-[85%]">
+        <div className="grid md:grid-cols-2 gap-8 mb-6">
+          {/* Left */}
+          <div>
+            <h3 className="text-lg font-semibold text-primary-base mb-2">
+              Emmanuel
+            </h3>
+            <p className="text-sm text-primary-base/60 mb-3">
               Frontend Engineer
             </p>
-
-            <p className="text-primary-base/70 leading-relaxed mb-6 max-w-md">
-              I build fast, reliable web applications using modern technologies
-              and love taking on new challenges.
+            <p className="text-sm text-primary-base/50 leading-relaxed max-w-sm mb-4">
+              Building fast, accessible web applications with modern
+              technologies. Always open to new challenges and opportunities.
             </p>
-
-            <div className="flex bg-primary-gray-300 w-fit rounded-full px-2 py-1 hover:opacity-80 items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm text-primary-base/70">
+            <div className="flex items-center gap-2 px-3 py-1.5 w-fit rounded-full bg-primary-gray-300/30 border border-primary-gray-300/40">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-xs text-primary-base/60">
                 Available for opportunities
               </span>
             </div>
           </div>
 
+          {/* Right */}
           <div className="md:text-right">
-            <h3 className="text-xl font-semibold text-primary-base mb-4">
-              Let’s Connect
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mb-4">
+              Let&apos;s Connect
             </h3>
-
-            <div className="flex flex-wrap md:justify-end gap-3 mb-8">
-              <Link
-                href="https://github.com/Royal-design"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition text-primary-base/70"
-              >
-                <FaGithub className="w-4 h-4" />
-                <span className="text-sm font-medium">GitHub</span>
-              </Link>
-
-              <Link
-                href="https://www.linkedin.com/in/emmanuel-olowookere-869262216"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition text-primary-base/70"
-              >
-                <FaLinkedinIn className="w-4 h-4" />
-                <span className="text-sm font-medium">LinkedIn</span>
-              </Link>
-
-              <Link
-                href="mailto:olowookereoluwaseun25@gmail"
-                className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/60 hover:opacity-80 border border-primary-gray-300/40 rounded-lg transition text-primary-base/70"
-              >
-                <Mail className="w-4 h-4" />
-                <span className="text-sm font-medium">Email</span>
-              </Link>
+            <div className="flex flex-wrap md:justify-end gap-2">
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/30 text-primary-base/60 rounded-lg border border-primary-gray-300/40 hover:border-primary-base/20 hover:text-primary-base transition-colors"
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span className="text-sm">{link.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
 
-        <div className="pt-4 border-t flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-base/70">
-            © {new Date().getFullYear()} Emmanuel. Built using Next.js
+        {/* Bottom */}
+        <div className="pt-4 border-t border-primary-gray-300/40 flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-primary-base/50">
+            © {currentYear} Emmanuel. Built with{" "}
+            <FiHeart className="w-3 h-3 text-red-500 inline mx-0.5" /> using
+            Next.js
           </p>
-
-          <div className="flex items-center gap-3 text-sm text-primary-base/70">
-            <span>Ibadan, Nigeria</span>
-            <span className="w-1 h-1 bg-primary-gray-300 rounded-full"></span>
+          <div className="flex items-center gap-2 text-xs text-primary-base/50">
+            <span>Nigeria</span>
+            <span className="w-1 h-1 bg-primary-gray-300/60 rounded-full" />
             <span>Open to Remote Work</span>
           </div>
         </div>
