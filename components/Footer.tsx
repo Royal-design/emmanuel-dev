@@ -71,17 +71,12 @@ export const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-4 border-t border-primary-gray-300/40 flex flex-col md:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-primary-base/50">
+        <div className="pt-4 border-t border-primary-gray-300/70 flex flex-col md:flex-row justify-center items-center gap-3">
+          <p className="text-xs text-center text-primary-base/50">
             © {currentYear} Emmanuel. Built with{" "}
             <FiHeart className="w-3 h-3 text-red-500 inline mx-0.5" /> using
             Next.js
           </p>
-          <div className="flex items-center gap-2 text-xs text-primary-base/50">
-            <span>Nigeria</span>
-            <span className="w-1 h-1 bg-primary-gray-300/60 rounded-full" />
-            <span>Open to Remote Work</span>
-          </div>
         </div>
       </Layout>
     </footer>
