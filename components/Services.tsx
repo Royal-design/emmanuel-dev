@@ -1,58 +1,74 @@
-import { PiCodepenLogoThin } from "react-icons/pi";
-import { BiLogoTailwindCss } from "react-icons/bi";
-import { DiCodeigniter } from "react-icons/di";
-import React from "react";
+import {
+  FiCode,
+  FiGitBranch,
+  FiLayout,
+  FiPenTool,
+  FiSmartphone,
+  FiZap,
+} from "react-icons/fi";
 
-export const services = [
+const services = [
   {
-    id: 1,
-    heading: "Frontend Development",
-    icon: <PiCodepenLogoThin size="3.5rem" />,
-    text: "My expertise lies in building sleek, user-friendly web applications with a focus on speed, accessibility, and modern engineering using React, Next.js, TypeScript, and Tailwind CSS.",
+    icon: FiCode,
+    title: "Frontend Development",
+    description: "React, Next.js, TypeScript & Tailwind CSS applications",
   },
   {
-    id: 2,
-    heading: "UI Design",
-    icon: <BiLogoTailwindCss size="3rem" />,
-    text: "I design clean, modern, and functional interfaces that provide seamless user experience while maintaining visual consistency across platforms.",
+    icon: FiLayout,
+    title: "UI Design",
+    description: "Clean, modern interfaces with seamless UX",
   },
   {
-    id: 3,
-    heading: "Illustrative Design",
-    icon: <DiCodeigniter size="3rem" />,
-    text: "I create eye-catching visual content—from simple branding elements to unique illustrations that help communicate ideas effectively.",
+    icon: FiPenTool,
+    title: "Illustrative Design",
+    description: "Visual content & branding elements",
+  },
+  {
+    icon: FiSmartphone,
+    title: "Responsive Design",
+    description: "Mobile-first, cross-device compatible layouts",
+  },
+  {
+    icon: FiZap,
+    title: "Performance Optimization",
+    description: "Fast loading, optimized web experiences",
+  },
+  {
+    icon: FiGitBranch,
+    title: "API Integration",
+    description: "RESTful APIs & state management solutions",
   },
 ];
 
 export const Services = () => {
   return (
-    <div className="flex-1/2  w-full">
-      <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 font-semibold">
-        Solutions I Provide
-      </h2>
+    <div className="md:flex-[40%]">
+      <h3 className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mb-4">
+        Services
+      </h3>
 
-      <div className="space-y-6">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className="p-4 rounded-xl border border-border bg-primary-gray-300/40 hover:border-primary-base/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group cursor-pointer"
-          >
+      <div className="space-y-2">
+        {services.map((service) => {
+          const Icon = service.icon;
+          return (
             <div
-              className="text-primary-base mb-4 group-hover:text-primary-base/90 
-              transition-all duration-300"
+              key={service.title}
+              className="group flex items-start gap-3 p-3 rounded-lg bg-primary-gray-300/20 border border-primary-gray-300/40 hover:border-primary-base/20 hover:bg-primary-gray-300/30 transition-all"
             >
-              {service.icon}
+              <div className="p-2 rounded-md bg-primary-base/10 text-primary-base group-hover:bg-primary-base/20 transition-colors">
+                <Icon className="w-4 h-4" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-sm font-semibold text-primary-base mb-0.5">
+                  {service.title}
+                </h4>
+                <p className="text-xs text-primary-base/60">
+                  {service.description}
+                </p>
+              </div>
             </div>
-
-            <h3 className="text-lg font-semibold text-primary-base mb-2">
-              {service.heading}
-            </h3>
-
-            <p className="text-sm text-primary-base/70 leading-relaxed">
-              {service.text}
-            </p>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

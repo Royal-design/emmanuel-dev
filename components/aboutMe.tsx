@@ -43,7 +43,7 @@ export const AboutMe = () => {
 
       {/* Bio */}
       <p className="text-sm md:text-base text-primary-base/80 leading-relaxed mb-6 max-w-2xl">
-        I'm a{" "}
+        {`I'm a `}
         <span className="font-semibold text-primary-base">
           Front-End Engineer
         </span>{" "}
