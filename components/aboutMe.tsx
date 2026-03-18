@@ -1,71 +1,87 @@
 import Image from "next/image";
-import { RiCheckLine } from "react-icons/ri";
+import {
+  FiClock,
+  FiGlobe,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+  FiUser,
+} from "react-icons/fi";
 
-const ABOUT_POINTS = [
-  "Building pixel-perfect, responsive UI",
-  "Implementing smooth animations & interactions",
-  "Writing scalable, maintainable front-end code",
-  "Optimizing performance for better user experience",
-  "Creating reusable design systems and components",
-  "Improving accessibility and web standards compliance",
-  "Integrating APIs and managing state efficiently",
-  "Translating Figma designs into real interfaces",
-  "Ensuring cross-browser & cross-device compatibility",
+const highlights = [
+  "Pixel-perfect, responsive UI development",
+  "Modern React & Next.js applications",
+  "Performance optimization & accessibility",
+  "Clean, maintainable code architecture",
 ];
 
-const ABOUT_INFO = [
-  { label: "Name", value: "Olowookere Oluwaseun" },
-  { label: "Phone", value: "(+234) 915 187 9027" },
-  { label: "Experience", value: "3+ Years" },
-  { label: "Nationality", value: "Nigerian" },
-  { label: "Email", value: "olowookereoluwaseun25@gmail" },
-  { label: "Language", value: "English, Yoruba" },
+const personalInfo = [
+  { icon: FiUser, label: "Name", value: "Olowookere Oluwaseun" },
+  { icon: FiMail, label: "Email", value: "olowookereoluwaseun25@gmail.com" },
+  { icon: FiPhone, label: "Phone", value: "(+234) 915 187 9027" },
+  { icon: FiMapPin, label: "Location", value: "Ibadan, Nigeria" },
+  { icon: FiClock, label: "Experience", value: "3+ Years" },
+  { icon: FiGlobe, label: "Languages", value: "English, Yoruba" },
 ];
 
 export const AboutMe = () => {
   return (
     <div className="md:flex-[60%]">
-      <div className="inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-primary-gray-300 text-primary-base mb-3">
-        <Image
-          src="/handwave.webp"
-          alt="hand wave"
-          width={100}
-          height={100}
-          className="size-6"
-        />
-        <span className="">Who Am I?</span>
+      {/* Header */}
+      <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-full bg-primary-base/10 text-primary-base border border-primary-base/20">
+          <Image
+            src="/handwave.webp"
+            alt="wave"
+            width={16}
+            height={16}
+            className="w-4 h-4"
+          />
+          About Me
+        </div>
       </div>
 
-      <h2 className="text-2xl md:text-3xl lg:text-4xl mb-4">About Me</h2>
-
-      <p className="text-base text-primary-base leading-relaxed">
-        I’m a Front-End Engineer passionate about building fast, accessible, and
-        visually engaging digital experiences. I specialize in React, Next.js,
-        TypeScript, and modern UI engineering—bringing ideas to life through
-        clean code, thoughtful design, and great user experiences.
+      {/* Bio */}
+      <p className="text-sm md:text-base text-primary-base/80 leading-relaxed mb-6 max-w-2xl">
+        I'm a{" "}
+        <span className="font-semibold text-primary-base">
+          Front-End Engineer
+        </span>{" "}
+        passionate about building fast, accessible, and visually engaging
+        digital experiences. I specialize in React, Next.js, and
+        TypeScript—transforming ideas into polished products through clean code
+        and thoughtful design.
       </p>
 
-      {/* Skills List */}
-      <div className="mt-5 space-y-2 text-secondary-gray text-sm">
-        {ABOUT_POINTS.map((point, index) => (
-          <p key={index} className="flex items-center gap-2">
-            <RiCheckLine className="text-primary-base" />
-            {point}
-          </p>
+      {/* Highlights */}
+      <div className="grid grid-cols-2 gap-2 mb-6">
+        {highlights.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-2 px-3 py-2 text-xs md:text-sm text-primary-base/70 bg-primary-gray-300/30 rounded-lg border border-primary-gray-300/50"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-primary-base/60" />
+            {item}
+          </div>
         ))}
       </div>
 
-      {/* Info Grid */}
-      <div className="grid grid-cols-2 w-fit gap-2 md:gap-4 mt-4">
-        {ABOUT_INFO.map(({ label, value }, index) => (
+      {/* Personal Info */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+        {personalInfo.map(({ icon: Icon, label, value }) => (
           <div
-            key={index}
-            className="px-2 py-2 max-md:py-1 rounded-md bg-primary-gray-300 text-secondary-gray text-sm"
+            key={label}
+            className="group flex items-center gap-2 px-3 py-2 bg-primary-gray-300/20 rounded-lg border border-primary-gray-300/40 hover:border-primary-base/20 hover:bg-primary-gray-300/30 transition-all"
           >
-            {label}:{" "}
-            <span className="font-medium wrap-break-word text-primary-base/80 max-md:block max-md:text-xs whitespace-normal">
-              {value}
-            </span>
+            <Icon className="w-4 h-4 text-primary-base/50 group-hover:text-primary-base/70 transition-colors" />
+            <div className="min-w-0">
+              <p className="text-[10px] uppercase tracking-wider text-primary-base/40">
+                {label}
+              </p>
+              <p className="text-xs font-medium text-primary-base/80 truncate">
+                {value}
+              </p>
+            </div>
           </div>
         ))}
       </div>

@@ -51,7 +51,7 @@ export const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="w-full md:w-[85%] lg:w-[85%] text-base md:text-lg leading-relaxed text-primary-gray"
+              className="w-full font-dm-sans md:w-[85%] lg:w-[85%] text-base md:text-lg leading-relaxed text-primary-gray"
             >
               I am a frontend developer based in Ibadan, Nigeria. Where I turn{" "}
               <span className="font-semibold text-primary-base">ideas</span>{" "}

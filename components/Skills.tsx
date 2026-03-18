@@ -1,126 +1,131 @@
-import { IoLogoHtml5, IoLogoCss3 } from "react-icons/io";
-import { FaJs, FaSass } from "react-icons/fa";
-import { SiTypescript, SiJson, SiChakraui } from "react-icons/si";
-
-import { FaReact } from "react-icons/fa";
-import { SiRedux, SiTailwindcss } from "react-icons/si";
-
-import { SiShadcnui } from "react-icons/si";
-
-import { FaGitAlt, FaGithub } from "react-icons/fa";
-import { SiFirebase, SiPostman } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
-import { Layout } from "./Layout";
+import { FaGitAlt, FaGithub, FaJs, FaReact, FaSass } from "react-icons/fa";
+import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io";
 import { RiNextjsFill } from "react-icons/ri";
+import {
+  SiChakraui,
+  SiFirebase,
+  SiJson,
+  SiPostman,
+  SiRedux,
+  SiShadcnui,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
+import { Layout } from "./Layout";
 
-export const skills = [
+const skillCategories = [
   {
-    category: "Web Technologies",
-    items: [
-      { name: "HTML5", icon: <IoLogoHtml5 /> },
-      { name: "CSS3", icon: <IoLogoCss3 /> },
-      { name: "JavaScript", icon: <FaJs /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "SCSS", icon: <FaSass /> },
-      { name: "JSON / REST", icon: <SiJson /> },
+    title: "Languages",
+    skills: [
+      { name: "HTML5", icon: IoLogoHtml5, color: "#E34F26" },
+      { name: "CSS3", icon: IoLogoCss3, color: "#1572B6" },
+      { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "SCSS", icon: FaSass, color: "#CC6699" },
+      { name: "JSON", icon: SiJson, color: "#5B5EA6" },
     ],
   },
   {
-    category: "Frontend Frameworks & UI Libraries",
-    items: [
-      { name: "Next.js", icon: <RiNextjsFill /> },
-      { name: "React.js", icon: <FaReact /> },
-      { name: "Redux", icon: <SiRedux /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      { name: "ShadCN UI", icon: <SiShadcnui /> },
-      { name: "Chakra UI", icon: <SiChakraui /> },
+    title: "Frameworks",
+    skills: [
+      { name: "Next.js", icon: RiNextjsFill, color: "#7C7C7C" },
+      { name: "React", icon: FaReact, color: "#61DAFB" },
+      { name: "Redux", icon: SiRedux, color: "#764ABC" },
+      { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "ShadCN", icon: SiShadcnui, color: "#6D28D9" },
+      { name: "Chakra UI", icon: SiChakraui, color: "#319795" },
     ],
   },
   {
-    category: "Tools",
-    items: [
-      { name: "VS Code", icon: <DiVisualstudio /> },
-      { name: "Git", icon: <FaGitAlt /> },
-      { name: "GitHub", icon: <FaGithub /> },
-      { name: "Azure DevOps", icon: <VscAzureDevops /> },
-      { name: "Postman", icon: <SiPostman /> },
-      { name: "Firebase", icon: <SiFirebase /> },
+    title: "Tools",
+    skills: [
+      { name: "VS Code", icon: DiVisualstudio, color: "#007ACC" },
+      { name: "Git", icon: FaGitAlt, color: "#F05032" },
+      { name: "GitHub", icon: FaGithub, color: "#8B5CF6" },
+      { name: "Azure DevOps", icon: VscAzureDevops, color: "#0078D7" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
     ],
   },
 ];
 
-export const softSkills = [
-  { name: "Teamwork" },
-  { name: "Leadership" },
-  { name: "Adaptability" },
-  { name: "Communication" },
-  { name: "Problem Solving" },
-  { name: "Collaboration" },
-  { name: "Time Management" },
-  { name: "Critical Thinking" },
-  { name: "Conflict Resolution" },
-  { name: "Attention to Detail" },
+const softSkills = [
+  "Teamwork",
+  "Leadership",
+  "Adaptability",
+  "Communication",
+  "Problem Solving",
+  "Collaboration",
+  "Time Management",
+  "Critical Thinking",
 ];
 
 export const Skills = () => {
   return (
-    <div className="bg-background py-6 md:py-12 scroll-mt-16" id="skills">
-      <Layout className="md:w-[80%]">
-        <h2 className="text-3xl md:text-4xl font-semibold text-primary-base">
-          Skills & Expertise
-        </h2>
-        <p className="text-sm md:text-base text-primary-base/70 mb-6 md:max-w-[500px]">
-          A combination of technical and interpersonal skills that I have
-          developed to deliver effective solutions and collaborate efficiently.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {skills.map((group, index) => (
-            <div
-              key={index}
-              className="p-4 rounded-xl min-h-[340px] bg-primary-gray-300/40 border border-primary-gray-300 hover:border-primary-base/40 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col"
-            >
-              <h3 className="text-xl font-semibold text-primary-base mb-6">
-                {group.category}
-              </h3>
+    <section className="bg-background py-12 md:py-16 scroll-mt-16" id="skills">
+      <Layout className="md:w-[85%]">
+        {/* Header */}
+        <div className="mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-base mb-2">
+            Skills
+          </h2>
+          <p className="text-sm text-primary-base/60 max-w-lg">
+            Technologies and tools I work with to build modern web applications.
+          </p>
+        </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 flex-1">
-                {group.items.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center justify-center gap-3 p-4 rounded-xl bg-primary-gray-300/60 border border-primary-gray-300/40 shadow hover:shadow-md hover:-translate-y-1 transition-all w-full"
-                  >
-                    <span className="text-primary-base/80 text-4xl">
-                      {item.icon}
-                    </span>
-                    <p className="text-sm font-medium text-primary-base text-center">
-                      {item.name}
-                    </p>
-                  </div>
-                ))}
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          {skillCategories.map((category) => (
+            <div
+              key={category.title}
+              className="bg-primary-gray-300/30 border border-primary-gray-300/50 rounded-lg p-4"
+            >
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mb-3">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <div
+                      key={skill.name}
+                      className="group flex items-center gap-2 px-3 py-1.5 bg-primary-gray-300/40 rounded-md border border-transparent hover:border-primary-base/20 hover:bg-primary-gray-300/60 transition-all duration-200 cursor-default"
+                    >
+                      <Icon
+                        className="text-base opacity-70 group-hover:opacity-100 transition-opacity"
+                        style={{ color: skill.color }}
+                      />
+                      <span className="text-xs font-medium text-primary-base/80 group-hover:text-primary-base transition-colors">
+                        {skill.name}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
+        </div>
 
-          {/* Soft Skills */}
-          <div className="p-4 rounded-xl min-h-[340px] bg-primary-gray-300/40 hover:border-primary-base/40 hover:shadow-lg transition-all duration-300 border border-primary-gray-300 shadow-sm flex flex-col">
-            <h3 className="text-xl font-semibold text-primary-base mb-6">
+        {/* Soft Skills - Compact inline style */}
+        <div className="bg-primary-gray-300/20 border border-primary-gray-300/40 rounded-lg p-4">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mr-2">
               Soft Skills
-            </h3>
-
-            <div className="flex flex-wrap gap-4 justify-items-center">
-              {softSkills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 text-xs md:text-sm rounded-full bg-primary-gray-300/60 border border-primary-gray-300/40 text-primary-base font-medium shadow-sm hover:shadow-md transition"
-                >
-                  {skill.name}
-                </span>
-              ))}
-            </div>
+            </span>
+            {softSkills.map((skill, index) => (
+              <span
+                key={skill}
+                className="text-xs text-primary-base/70 before:content-['·'] before:mr-1.5 before:text-primary-base/30"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
       </Layout>
-    </div>
+    </section>
   );
 };

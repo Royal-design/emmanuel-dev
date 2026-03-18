@@ -1,4 +1,4 @@
-import { Poppins, Inter, Montserrat, DM_Serif_Text } from "next/font/google";
+import { Poppins, Inter, Montserrat, DM_Serif_Display } from "next/font/google";
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -18,8 +18,8 @@ export const montserrat = Montserrat({
   weight: ["400"],
 });
 
-export const dmSans = DM_Serif_Text({
+export const dmSans = DM_Serif_Display({
   subsets: ["latin"],
+  weight: "400",
   variable: "--font-dm-serif",
-  weight: ["400"],
 });
