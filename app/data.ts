@@ -69,7 +69,7 @@ export const experiences = [
   {
     title: "Frontend Developer Intern",
     company: "HNG Internship",
-    duration: "Jan 2025",
+    duration: "December 2024 - January 2025",
     details: [
       "Built scalable React + TypeScript apps using hooks, components, and Redux.",
       "Focused on clean, reusable code and maintainable architecture.",
@@ -79,7 +79,7 @@ export const experiences = [
   {
     title: "Web Developer Intern",
     company: "CODSOFT",
-    duration: "October 2024",
+    duration: "September 2024 - October 2024",
     details: [
       "Learned and applied the basics of HTML, CSS, and JavaScript to build interactive web pages.",
       "Worked on several projects, utilizing JavaScript for dynamic functionality and frontend logic.",
