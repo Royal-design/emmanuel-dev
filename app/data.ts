@@ -88,7 +88,35 @@ export const experiences = [
   },
 ];
 
-export const projects = [
+export interface Project {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  projectLink: string;
+  githubLink: string | null;
+  imageLink: string;
+  techStacks: string[];
+}
+
+export const projects: Project[] = [
+  {
+    id: 8,
+    title: "Vatnova",
+    category: "full-stack",
+    description: `Vatnova is an AI-powered enterprise customer engagement platform specifically built for the African market. It provides white-label AI chat solutions, compliance automation, and real-time support infrastructure designed for scale and emerging markets. The platform empowers businesses to enhance customer interactions with intelligent automation and seamless support workflows.`,
+    projectLink: "https://vatnova.netlify.app/",
+    githubLink: null,
+    imageLink: "/vatnova.webp",
+    techStacks: [
+      "React",
+      "React Query",
+      "Redux Toolkit",
+      "Tailwind",
+      "SignalR",
+      "REST APIs",
+    ],
+  },
   {
     id: 22,
     title: "Soloa AI Platform",
@@ -110,10 +138,38 @@ export const projects = [
     ],
   },
   {
+    id: 9,
+    title: "ATIRC Platform",
+    category: "frontend",
+    description: `ATIRC (Advanced Technological Incubation and Research Center) is a digital ecosystem designed to empower Africa's youth by providing access to resources, mentorship, and training in emerging technologies like AI, robotics, and cybersecurity. The platform serves as a hub for innovation, research, and incubation, helping young innovators transform ideas into impactful solutions and lead the digital revolution.`,
+    projectLink: "https://www.atirc.org.ng/",
+    githubLink: null,
+    imageLink: "/atirc.webp",
+    techStacks: ["React", "RTK", "Tailwind", "REST APIs"],
+  },
+  {
+    id: 10,
+    title: "Trauma Informed Care (TIC)",
+    category: "full-stack",
+    description: `A comprehensive multi-tenant platform designed to connect therapists with clients and organizations. The system features a robust dashboard with specialized portals for admins, agents, organizations, and clients, facilitating seamless mental health support and organizational wellness management. (Test Access - Email: admin@tic.com | Pass: Pa55word@123)`,
+    projectLink: "https://trauma-app.netlify.app/",
+    githubLink: null,
+    imageLink: "/tic.webp",
+    techStacks: [
+      "React",
+      "TypeScript",
+      "Redux",
+      "Chakra UI",
+      "Tailwind",
+      "SignalR",
+      "REST APIs",
+    ],
+  },
+  {
     id: 33,
     title: "EFCC LMS Platform",
     category: "full-stack",
-    description: `The EFCC LMS is a learning management system designed to support training and capacity development for personnel within the Economic and Financial Crimes Commission (EFCC). The platform enables users to access courses, track learning progress, complete assessments, and engage in structured digital training programs. It focuses on scalable content delivery, user management, and an intuitive dashboard for efficient learning experience.`,
+    description: `The EFCC LMS is a learning management system designed to support training and capacity development for personnel within the Economic and Financial Crimes Commission (EFCC). The platform enables users to access courses, track learning progress, complete assessments, and engage in structured digital training programs. (Test Access - Email: admin@root.com | Pass: 123Pa$$word!)`,
     projectLink: "https://lms.efcc.gov.ng/dashboard",
     githubLink: null,
     imageLink: "/efcc.webp",
@@ -260,45 +316,4 @@ export const projects = [
   },
 ];
 
-export const otherProjects = [
-  {
-    id: 1,
-    title: "Taskify",
-    category: "practice",
-    description: `Taskify is a clean, responsive task manager that lets users create, edit, and delete daily goals with ease.`,
-    projectLink: "https://task-manager-ecru-pi-75.vercel.app/",
-    githubLink: "https://github.com/Royal-design/task-manager",
-    imageLink: "/taskify.webp",
-    techStacks: ["React", "TypeScript", "ShadCN", "Firebase"],
-  },
-  {
-    id: 2,
-    title: "Clothing Store",
-    category: "practice",
-    description: `SimpleCloth is a basic clothing store app built with React & TypeScript, featuring a clean layout, cart functionality, and responsive design.`,
-    projectLink: "https://clothing-store-jade.vercel.app/",
-    githubLink: "https://github.com/Royal-design/shopping-cart",
-    imageLink: "/clothestore.webp",
-    techStacks: ["React", "TypeScript", "SCSS"],
-  },
-  {
-    id: 3,
-    title: "CGPA Calculator",
-    category: "practice",
-    description: `A responsive CGPA calculator built with React, TypeScript & Chakra UI. Easily compute your GPA by entering course units and grades.`,
-    projectLink: "https://cgpa-calculator-one-wheat.vercel.app/",
-    githubLink: "https://github.com/Royal-design/cgpacalculator",
-    imageLink: "/cgpa.webp",
-    techStacks: ["React", "TypeScript", "Chakra UI"],
-  },
-  {
-    id: 4,
-    title: "Basic Calculator",
-    category: "practice",
-    description: `A basic calculator built with HTML, CSS & JavaScript for simple arithmetic operations.`,
-    projectLink: "https://calculator-eight-beta-25.vercel.app/",
-    githubLink: "https://github.com/Royal-design/codsoft_3",
-    imageLink: "/basic.webp",
-    techStacks: ["HTML", "CSS", "JavaScript"],
-  },
-];
+export const otherProjects: Project[] = [];
