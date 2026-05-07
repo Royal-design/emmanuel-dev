@@ -4,14 +4,14 @@ export const education = [
     school: "Obafemi Awolowo University",
     duration: "2018 - 2023",
     details: [
-      "Graduated with Upper Second Class Honors (2:1)",
+      "Graduated with Second Class Upper Honours (CGPA: 4.12/5.00)",
       "Specialized in applied physics, polymers, and electronics",
-      "Active member of the Engineering Students Association with participation in tech workshops and coding projects",
+      "Active member of Google Developer Student Club (GDSC) and Engineering Students Association, participating in tech workshops and coding projects",
     ],
   },
   {
     degree: "Professional Certification in Frontend Development",
-    school: "Udemy · Jonas Schmedtmann . Dave Gray",
+    school: "Udemy - Jonas Schmedtmann . Dave Gray",
     duration: "2021-2024",
     details: [
       "Completed a comprehensive curriculum covering HTML, CSS, JavaScript, and React",
