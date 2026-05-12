@@ -1,25 +1,33 @@
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { PagePreloader } from "@/components/PagePreloader";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { dmSans, inter } from "./fonts/fonts";
 import "./globals.css";
 
+const siteUrl = "https://emmanuel-developer.vercel.app";
+const siteName = "Emmanuel Olowookere";
+const title = "Emmanuel Olowookere - Frontend Engineer";
+const description =
+  "Portfolio of Emmanuel Olowookere, a frontend engineer in Nigeria building fast, accessible React, Next.js, TypeScript, and AI-powered web applications for modern teams.";
+
 export const metadata: Metadata = {
   title: {
-    default:
-      "Emmanuel Olowookere – Frontend Engineer | React & Next.js Developer",
-    template: "%s | Emmanuel Olowookere",
+    default: title,
+    template: `%s | ${siteName}`,
   },
-  description:
-    "Emmanuel Olowookere is a Frontend Engineer specializing in React, Next.js, TypeScript, and modern web development. Building fast, accessible, and visually engaging web applications. Based in Ibadan, Nigeria.",
+  description,
+  applicationName: siteName,
   keywords: [
     "Emmanuel Olowookere",
+    "Oluwaseun Emmanuel",
     "Frontend Developer",
     "Frontend Engineer",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
+    "AI Frontend Engineer",
     "Web Developer Nigeria",
     "Frontend Developer Ibadan",
     "React Portfolio",
@@ -35,41 +43,36 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Emmanuel Olowookere",
-      url: "https://emmanuel-developer.vercel.app/",
+      url: siteUrl,
     },
   ],
   creator: "Emmanuel Olowookere",
   publisher: "Emmanuel Olowookere",
-  metadataBase: new URL("https://emmanuel-developer.vercel.app/"),
+  metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "https://emmanuel-developer.vercel.app/",
+    canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    title:
-      "Emmanuel Olowookere – Frontend Engineer | React & Next.js Developer",
-    description:
-      "Frontend Engineer specializing in React, Next.js, and TypeScript. Building fast, accessible web applications. View my portfolio and projects.",
-    url: "https://emmanuel-developer.vercel.app/",
-    siteName: "Emmanuel Olowookere Portfolio",
+    title,
+    description,
+    url: siteUrl,
+    siteName,
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Emmanuel Olowookere - Frontend Engineer Portfolio",
-        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emmanuel Olowookere – Frontend Engineer",
-    description:
-      "Frontend Engineer specializing in React, Next.js, and TypeScript. Building fast, accessible web applications.",
-    creator: "@emmanuel_dev",
-    images: ["/og-image.png"],
+    title,
+    description,
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -84,30 +87,27 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/avatar.png",
+    icon: [
+      { url: "/avatar.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png", sizes: "248x244" },
+    ],
     shortcut: "/avatar.png",
-    apple: {
-      url: "/avatar.png",
-      sizes: "180x180",
-    },
+    apple: [{ url: "/apple-icon.png", sizes: "248x244", type: "image/png" }],
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  manifest: "/manifest.json",
+  referrer: "origin-when-cross-origin",
   category: "technology",
 };
 
-// JSON-LD Structured Data
-const jsonLd = {
+const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Emmanuel Olowookere",
   alternateName: "Oluwaseun Emmanuel",
-  url: "https://emmanuel-developer.vercel.app/",
-  image: "https://emmanuel-developer.vercel.app/emmy.webp",
+  url: siteUrl,
+  image: `${siteUrl}/avatar.png`,
   jobTitle: "Frontend Engineer",
-  description:
-    "Frontend Engineer specializing in React, Next.js, TypeScript, and modern web development.",
+  description,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ibadan",
@@ -126,6 +126,9 @@ const jsonLd = {
     "Frontend Development",
     "Web Development",
     "UI/UX",
+    "AI Interfaces",
+    "Web Performance",
+    "Accessibility",
   ],
   alumniOf: {
     "@type": "EducationalOrganization",
@@ -136,18 +139,39 @@ const jsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Emmanuel Olowookere Portfolio",
-  url: "https://emmanuel-developer.vercel.app/",
+  name: `${siteName} Portfolio`,
+  url: siteUrl,
   author: {
     "@type": "Person",
     name: "Emmanuel Olowookere",
   },
-  description:
-    "Portfolio website of Emmanuel Olowookere, a Frontend Engineer specializing in React, Next.js, and TypeScript.",
+  description,
   publisher: {
     "@type": "Person",
     name: "Emmanuel Olowookere",
   },
+};
+
+const professionalServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: `${siteName} - Frontend Development Services`,
+  url: siteUrl,
+  image: `${siteUrl}/avatar.png`,
+  description:
+    "Frontend development services for responsive websites, dashboards, AI interfaces, and React or Next.js applications.",
+  areaServed: ["Nigeria", "Worldwide"],
+  founder: {
+    "@type": "Person",
+    name: "Emmanuel Olowookere",
+  },
+  serviceType: [
+    "Frontend Development",
+    "React Development",
+    "Next.js Development",
+    "UI Engineering",
+    "AI Product Interface Development",
+  ],
 };
 
 export default function RootLayout({
@@ -160,17 +184,24 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(professionalServiceJsonLd),
+          }}
+        />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/avatar.png" sizes="180x180" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="248x244" />
         <meta name="theme-color" content="#6366f1" />
       </head>
       <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
+        <PagePreloader />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
