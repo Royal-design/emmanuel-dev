@@ -77,7 +77,7 @@ export function About() {
         />
 
         <div className="grid gap-12 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-7">
+          <div className="min-w-0 md:col-span-7">
             <Reveal>
               <p className="font-display text-2xl leading-snug font-medium tracking-tight text-balance md:text-3xl">
                 I&apos;m a front-end engineer who treats the browser as a serious
@@ -143,7 +143,7 @@ export function About() {
             </Reveal>
           </div>
 
-          <div className="md:col-span-5">
+          <div className="min-w-0 md:col-span-5">
             <div className="md:sticky md:top-28">
               <Reveal delay={0.1}>
                 <div className="border border-line bg-surface">

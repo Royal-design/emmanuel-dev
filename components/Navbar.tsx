@@ -152,15 +152,15 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="group flex items-baseline gap-4 border-b border-line py-4"
+                    className="group flex min-w-0 items-baseline gap-4 border-b border-line py-4"
                   >
                     <span className="font-mono text-xs text-accent">
                       0{i + 1}
                     </span>
-                    <span className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+                    <span className="truncate font-display text-3xl font-semibold tracking-tight sm:text-5xl">
                       {link.label}
                     </span>
-                    <ArrowUpRight className="h-5 w-5 text-ink-3 transition-colors group-hover:text-accent" />
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-ink-3 transition-colors group-hover:text-accent" />
                   </Link>
                 </motion.div>
               ))}

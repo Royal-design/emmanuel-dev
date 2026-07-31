@@ -42,7 +42,7 @@ export function Contact() {
         />
 
         <div className="grid gap-12 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-7">
+          <div className="min-w-0 md:col-span-7">
             <Reveal>
               <p className="max-w-xl leading-relaxed text-ink-2">
                 I&apos;m currently available for frontend roles, contract work and
@@ -53,17 +53,17 @@ export function Contact() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="mt-10">
+              <div className="mt-10 min-w-0">
                 <Magnetic strength={0.2}>
                   <a
                     href={`mailto:${contactInfo.email}`}
-                    className="group inline-flex flex-wrap items-baseline gap-x-3 font-display text-2xl font-semibold tracking-tight md:text-4xl"
+                    className="group inline-flex max-w-full flex-wrap items-baseline gap-x-3 font-display text-xl font-semibold tracking-tight md:text-4xl"
                   >
-                    <span className="relative">
+                    <span className="relative min-w-0 break-words">
                       {contactInfo.email}
                       <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 bg-accent transition-transform duration-500 group-hover:scale-x-0" />
                     </span>
-                    <ArrowUpRight className="h-6 w-6 text-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 md:h-8 md:w-8" />
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 md:h-8 md:w-8" />
                   </a>
                 </Magnetic>
               </div>

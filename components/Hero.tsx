@@ -60,20 +60,20 @@ export default function Hero() {
             animate="visible"
             className="flex flex-col items-start gap-12 lg:flex-row lg:items-end lg:justify-between"
           >
-            <div className="flex w-full flex-col gap-8 lg:max-w-[720px]">
+            <div className="flex w-full min-w-0 flex-col gap-8 lg:max-w-[720px]">
               <motion.div
                 variants={fadeUp}
                 className="flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] text-ink-2 uppercase sm:text-xs"
               >
                 <span className="text-ink-3">{"//"}</span>
-                <span>Frontend Engineer — {contactInfo.location}</span>
+                <span className="min-w-0">Frontend Engineer — {contactInfo.location}</span>
                 <span
-                  className="inline-block h-3 w-[7px] animate-blink bg-accent"
+                  className="inline-block h-3 w-[7px] shrink-0 animate-blink bg-accent"
                   aria-hidden="true"
                 />
               </motion.div>
 
-              <h1 className="font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.92] font-bold tracking-tight">
+              <h1 className="font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.92] font-bold tracking-tight [overflow-wrap:anywhere]">
                 <span className="block overflow-hidden pb-[0.08em]">
                   <motion.span variants={lineReveal} className="block">
                     Emmanuel
