@@ -5,8 +5,8 @@ interface LayoutProps {
 
 export const Layout = ({ children, className }: LayoutProps) => {
   return (
-    <div className="max-w-[1440px] mx-auto">
-      <div className={`max-w-[90%] mx-auto ${className ?? ""}`}>{children}</div>
+    <div className={`mx-auto w-full max-w-[1240px] px-5 sm:px-8 md:px-12 ${className ?? ""}`}>
+      {children}
     </div>
   );
 };

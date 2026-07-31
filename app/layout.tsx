@@ -1,9 +1,10 @@
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PagePreloader } from "@/components/PagePreloader";
 import { ThemeProvider } from "@/components/theme-provider";
+import { MotionProvider } from "@/components/motion-provider";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { dmSans, inter } from "./fonts/fonts";
+import { bricolage, inter, jetbrainsMono } from "./fonts/fonts";
 import "./globals.css";
 
 const siteUrl = "https://emmanuel-developer.vercel.app";
@@ -200,9 +201,11 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="apple-touch-icon" href="/apple-icon.png" sizes="248x244" />
-        <meta name="theme-color" content="#6366f1" />
+        <meta name="theme-color" content="#0c0c0a" />
       </head>
-      <body className={`${inter.variable} ${dmSans.variable} antialiased`}>
+      <body
+        className={`${bricolage.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      >
         <PagePreloader />
         <ThemeProvider
           attribute="class"
@@ -210,7 +213,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ErrorBoundary>{children}</ErrorBoundary>
+          <MotionProvider>
+            <ErrorBoundary>{children}</ErrorBoundary>
+          </MotionProvider>
           <Analytics />
         </ThemeProvider>
       </body>

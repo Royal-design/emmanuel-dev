@@ -1,160 +1,128 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import { FiClock, FiGlobe, FiMail, FiMapPin } from "react-icons/fi";
+import { contactInfo } from "@/app/data";
 import { Layout } from "./Layout";
+import { Magnetic } from "./Magnetic";
+import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
-const contactLinks = [
+const socials = [
   {
-    href: "mailto:olowookereoluwaseun25@gmail.com",
-    icon: FiMail,
-    label: "Email",
-    value: "olowookereoluwaseun25@gmail.com",
-  },
-  {
-    href: "https://wa.me/2349151879027",
-    icon: FaWhatsapp,
-    label: "WhatsApp",
-    value: "+234 915 187 9027",
-  },
-  {
-    href: "https://www.linkedin.com/in/emmanuel-olowookere-869262216",
-    icon: FaLinkedinIn,
-    label: "LinkedIn",
-    value: "Connect with me",
-  },
-  {
-    href: "https://github.com/Royal-design",
+    href: contactInfo.github,
     icon: FaGithub,
     label: "GitHub",
-    value: "View my code",
+    value: "github.com/Royal-design",
+  },
+  {
+    href: contactInfo.linkedin,
+    icon: FaLinkedinIn,
+    label: "LinkedIn",
+    value: "Emmanuel Olowookere",
+  },
+  {
+    href: contactInfo.whatsapp,
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    value: contactInfo.phone,
   },
 ];
 
-const infoItems = [
-  { icon: FiMapPin, label: "Location", value: "Nigeria" },
-  { icon: FiClock, label: "Response Time", value: "Within 24 hours" },
-  { icon: FiGlobe, label: "Remote", value: "Available worldwide" },
-];
-
-const openTo = [
-  "Frontend Development",
-  "Full-time Roles",
-  "Contract Work",
-  "Remote",
-];
-
-export const Contact = () => {
+export function Contact() {
   return (
-    <section
-      className="bg-background py-12 md:py-16 scroll-mt-16 md:w-[90%] mx-auto"
-      id="contact"
-    >
-      <Layout className="md:w-[85%]">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary-base mb-2">
-            Let's Team Up
-          </h2>
-          <p className="text-sm text-primary-base/60 max-w-lg mx-auto">
-            Ready to build something great? I'm available for frontend projects,
-            collaborations, and new opportunities.
-          </p>
-        </div>
+    <section id="contact" className="scroll-mt-20 border-t border-line py-24 md:py-36">
+      <Layout>
+        <SectionHeading
+          index="05"
+          label="Contact"
+          title="Let's build something worth shipping."
+          note={`Replies within 24 hours · ${contactInfo.location}`}
+        />
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Contact Links */}
-          <div className="space-y-2">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mb-3">
-              Get in Touch
-            </h3>
-            {contactLinks.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-3 p-3 rounded-lg bg-primary-gray-300/20 border border-primary-base/5 hover:border-primary-base/20 hover:bg-primary-gray-300/30 transition-all"
-                >
-                  <div className="p-2 rounded-md bg-primary-base/10 text-primary-base group-hover:bg-primary-base/20 transition-colors">
-                    <Icon className="w-4 h-4" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[10px] uppercase tracking-wider text-primary-base/40">
-                      {item.label}
-                    </p>
-                    <p className="text-xs font-medium text-primary-base/80 truncate">
-                      {item.value}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
+        <div className="grid gap-12 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-7">
+            <Reveal>
+              <p className="max-w-xl leading-relaxed text-ink-2">
+                I&apos;m currently available for frontend roles, contract work and
+                ambitious product teams — remote or on-site in Nigeria. If you
+                have a product to build, a dashboard to refine, or an AI
+                interface that needs to feel effortless, let&apos;s talk.
+              </p>
+            </Reveal>
 
-            {/* CTA Button */}
-            <Link
-              href="mailto:olowookereoluwaseun25@gmail.com"
-              className="flex items-center justify-center gap-2 md:w-fit mt-4 px-4 py-3 bg-primary-base text-primary font-medium rounded-lg hover:bg-primary-base/90 transition-colors text-sm"
-            >
-              <FiMail className="w-4 h-4" />
-              Send me an email
-            </Link>
-          </div>
+            <Reveal delay={0.1}>
+              <div className="mt-10">
+                <Magnetic strength={0.2}>
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    className="group inline-flex flex-wrap items-baseline gap-x-3 font-display text-2xl font-semibold tracking-tight md:text-4xl"
+                  >
+                    <span className="relative">
+                      {contactInfo.email}
+                      <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-100 bg-accent transition-transform duration-500 group-hover:scale-x-0" />
+                    </span>
+                    <ArrowUpRight className="h-6 w-6 text-accent transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 md:h-8 md:w-8" />
+                  </a>
+                </Magnetic>
+              </div>
+            </Reveal>
 
-          {/* Info & Availability */}
-          <div className="space-y-4">
-            <div className="p-4 rounded-lg bg-primary-gray-300/20 border border-primary-gray-300/40">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-xs font-medium text-primary-base">
-                  Available for new opportunities
+            <Reveal delay={0.15}>
+              <div className="mt-10 flex items-center gap-3">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-60" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-success" />
+                </span>
+                <span className="font-mono text-xs tracking-[0.16em] text-ink-2 uppercase">
+                  {contactInfo.availability} — frontend · contract · remote
                 </span>
               </div>
+            </Reveal>
+          </div>
 
-              <div className="space-y-2">
-                {infoItems.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.label}
-                      className="flex items-center gap-2 text-xs"
-                    >
-                      <Icon className="w-3.5 h-3.5 text-primary-base/50" />
-                      <span className="text-primary-base/60">
-                        {item.label}:
-                      </span>
-                      <span className="text-primary-base/80 font-medium">
-                        {item.value}
-                      </span>
-                    </div>
-                  );
-                })}
+          <div className="md:col-span-5">
+            <Reveal delay={0.1}>
+              <div className="border border-line bg-surface">
+                <div className="border-b border-line px-5 py-4">
+                  <h3 className="font-mono text-[11px] font-medium tracking-[0.22em] text-ink-3 uppercase">
+                    Elsewhere
+                  </h3>
+                </div>
+                <ul className="divide-y divide-line">
+                  {socials.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <li key={item.label}>
+                        <Link
+                          href={item.href}
+                          target={item.href.startsWith("http") ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-accent-soft/50"
+                        >
+                          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink-2 transition-colors group-hover:border-accent group-hover:text-accent">
+                            <Icon className="h-4 w-4" aria-hidden="true" />
+                          </span>
+                          <span className="flex-1">
+                            <span className="block text-sm font-medium text-ink">
+                              {item.label}
+                            </span>
+                            <span className="block text-xs text-ink-3">
+                              {item.value}
+                            </span>
+                          </span>
+                          <ArrowUpRight className="h-4 w-4 text-ink-3 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent" />
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
-            </div>
-
-            {/* Open To */}
-            <div className="p-4 rounded-lg bg-primary-gray-300/20 border border-primary-gray-300/40">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mb-3">
-                Open To
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {openTo.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs rounded-full bg-primary-base/10 text-primary-base border border-primary-base/20"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </Layout>
     </section>
   );
-};
+}

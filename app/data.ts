@@ -91,12 +91,14 @@ export const experiences = [
 export interface Project {
   id: number;
   title: string;
-  category: string;
+  category: "frontend" | "full-stack" | "ai";
   description: string;
   projectLink: string;
   githubLink: string | null;
   imageLink: string;
   techStacks: string[];
+  role: string;
+  highlights: string[];
 }
 
 export const projects: Project[] = [
@@ -108,6 +110,7 @@ export const projects: Project[] = [
     projectLink: "https://vatnova.netlify.app/",
     githubLink: null,
     imageLink: "/vatnova.webp",
+    role: "Frontend Engineering",
     techStacks: [
       "React",
       "React Query",
@@ -115,6 +118,12 @@ export const projects: Project[] = [
       "Tailwind",
       "SignalR",
       "REST APIs",
+    ],
+    highlights: [
+      "White-label AI chat solutions",
+      "Compliance automation",
+      "Real-time support infrastructure",
+      "Built for scale in emerging markets",
     ],
   },
   {
@@ -125,6 +134,7 @@ export const projects: Project[] = [
     projectLink: "https://www.soloa.ai/",
     githubLink: null,
     imageLink: "/soloa.webp",
+    role: "Frontend AI Engineer",
     techStacks: [
       "Next.js",
       "TypeScript",
@@ -136,6 +146,12 @@ export const projects: Project[] = [
       "State Management",
       "Framer Motion",
     ],
+    highlights: [
+      "50+ AI models unified in one workspace",
+      "Text, image, video and audio generation",
+      "Supabase auth, database and real-time",
+      "Stripe subscriptions and usage billing",
+    ],
   },
   {
     id: 9,
@@ -145,7 +161,13 @@ export const projects: Project[] = [
     projectLink: "https://www.atirc.org.ng/",
     githubLink: null,
     imageLink: "/atirc.webp",
+    role: "Lead Frontend Developer",
     techStacks: ["React", "RTK", "Tailwind", "REST APIs"],
+    highlights: [
+      "Youth empowerment ecosystem",
+      "Jobs, research, incubation and internship modules",
+      "Training content across AI, robotics and cybersecurity",
+    ],
   },
   {
     id: 10,
@@ -155,6 +177,7 @@ export const projects: Project[] = [
     projectLink: "https://trauma-app.netlify.app/",
     githubLink: null,
     imageLink: "/tic.webp",
+    role: "Frontend Engineer",
     techStacks: [
       "React",
       "TypeScript",
@@ -163,6 +186,11 @@ export const projects: Project[] = [
       "Tailwind",
       "SignalR",
       "REST APIs",
+    ],
+    highlights: [
+      "Multi-tenant therapist–client–organization model",
+      "Specialized portals for admins, agents, organizations and clients",
+      "Real-time communication via SignalR",
     ],
   },
   {
@@ -173,6 +201,7 @@ export const projects: Project[] = [
     projectLink: "https://lms.efcc.gov.ng/dashboard",
     githubLink: null,
     imageLink: "/efcc.webp",
+    role: "Frontend Engineer",
     techStacks: [
       "React.js",
       "Tailwind",
@@ -180,6 +209,11 @@ export const projects: Project[] = [
       "Dashboard UI",
       "API Integration",
       "State Management",
+    ],
+    highlights: [
+      "Role-based access for students, lecturers, admins and section heads",
+      "Course catalog, progress tracking and assessments",
+      "Structured digital training programs",
     ],
   },
   {
@@ -190,6 +224,7 @@ export const projects: Project[] = [
     projectLink: "https://global-tech-ecommerce.vercel.app/",
     githubLink: "https://github.com/Royal-design/global-tech",
     imageLink: "/global_tech.webp",
+    role: "Frontend Engineering",
     techStacks: [
       "React",
       "TypeScript",
@@ -201,6 +236,12 @@ export const projects: Project[] = [
       "Firebase",
       "Framer motion",
       "Stripe",
+    ],
+    highlights: [
+      "Product filtering, cart and wishlist",
+      "Firebase authentication",
+      "Zod-validated forms with React Hook Form",
+      "Stripe-powered checkout",
     ],
   },
 
@@ -212,6 +253,7 @@ export const projects: Project[] = [
     projectLink: "https://movielux.vercel.app/",
     githubLink: "https://github.com/Royal-design/movielux",
     imageLink: "/movielux.webp",
+    role: "Frontend Engineering",
     techStacks: [
       "React",
       "TypeScript",
@@ -220,6 +262,11 @@ export const projects: Project[] = [
       "ShadCN",
       "RTK Query",
       "TMDB API",
+    ],
+    highlights: [
+      "Live movie discovery via the TMDB API",
+      "RTK Query data fetching and caching",
+      "Modern, responsive viewing experience",
     ],
   },
 
@@ -231,6 +278,7 @@ export const projects: Project[] = [
     projectLink: "https://home-of-design.vercel.app/",
     githubLink: "https://github.com/Royal-design/home-of-design",
     imageLink: "/hod.webp",
+    role: "Frontend Engineering",
     techStacks: [
       "React",
       "TypeScript",
@@ -243,6 +291,11 @@ export const projects: Project[] = [
       "Framer motion",
       "Stripe",
     ],
+    highlights: [
+      "Product catalog with reviews",
+      "Cart and dummy checkout",
+      "Responsive across all devices",
+    ],
   },
   {
     id: 3,
@@ -252,6 +305,7 @@ export const projects: Project[] = [
     projectLink: "https://codeninja-ai.vercel.app/",
     githubLink: "https://github.com/Royal-design/ninja-ai",
     imageLink: "/ninja.webp",
+    role: "Frontend Engineering",
     techStacks: [
       "React",
       "TypeScript",
@@ -260,6 +314,11 @@ export const projects: Project[] = [
       "ShadCN",
       "Framer motion",
       "Gemini models",
+    ],
+    highlights: [
+      "Multilingual translation",
+      "Long-form content summarization",
+      "Gemini AI models in a chat-style UI",
     ],
   },
   {
@@ -270,6 +329,7 @@ export const projects: Project[] = [
     projectLink: "https://chatty-bee-ai.vercel.app/",
     githubLink: "https://github.com/Royal-design/chatty-bee-ai",
     imageLink: "/chattybee.webp",
+    role: "Frontend Engineering",
     techStacks: [
       "React",
       "TypeScript",
@@ -278,6 +338,11 @@ export const projects: Project[] = [
       "ShadCN",
       "Firebase",
       "Gemini models",
+    ],
+    highlights: [
+      "Context-aware conversational assistant",
+      "Natural, human-like AI dialogue",
+      "Firebase-backed session handling",
     ],
   },
   {
@@ -288,6 +353,7 @@ export const projects: Project[] = [
     projectLink: "https://beep-me.vercel.app/",
     githubLink: "https://github.com/Royal-design/BeepME",
     imageLink: "/beepme.webp",
+    role: "Frontend Engineering",
     techStacks: [
       "React",
       "TypeScript",
@@ -295,6 +361,11 @@ export const projects: Project[] = [
       "Tailwind",
       "ShadCN",
       "Firebase",
+    ],
+    highlights: [
+      "Real-time messaging on Firebase",
+      "Email/password and Google sign-in",
+      "Smooth, modern conversation UI",
     ],
   },
   {
@@ -305,6 +376,7 @@ export const projects: Project[] = [
     projectLink: "https://metaverse-corex-event.vercel.app/",
     githubLink: "https://github.com/Royal-design/metaverse-event",
     imageLink: "/metaverse.webp",
+    role: "Frontend Engineering",
     techStacks: [
       "React",
       "TypeScript",
@@ -313,7 +385,63 @@ export const projects: Project[] = [
       "ShadCN",
       "Firebase",
     ],
+    highlights: [
+      "Futuristic neon event experience",
+      "Multi-step personalized ticket generation",
+      "Form validation with persistent state",
+    ],
   },
 ];
 
 export const otherProjects: Project[] = [];
+
+export const contactInfo = {
+  name: "Emmanuel Olowookere",
+  email: "olowookereoluwaseun25@gmail.com",
+  phone: "+234 915 187 9027",
+  whatsapp: "https://wa.me/2349151879027",
+  location: "Ibadan, Nigeria",
+  coords: "7.3775° N, 3.9470° E",
+  github: "https://github.com/Royal-design",
+  linkedin: "https://www.linkedin.com/in/emmanuel-olowookere-869262216",
+  resume: "/resume.pdf",
+  availability: "Open to new opportunities",
+};
+
+export const stack = {
+  languages: [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "TypeScript",
+    "SCSS",
+    "JSON",
+  ],
+  frameworks: [
+    "Next.js",
+    "React",
+    "Redux",
+    "Tailwind",
+    "ShadCN",
+    "Chakra UI",
+  ],
+  tools: [
+    "Git",
+    "GitHub",
+    "VS Code",
+    "Azure DevOps",
+    "Postman",
+    "Firebase",
+    "Supabase",
+  ],
+  soft: [
+    "Teamwork",
+    "Leadership",
+    "Adaptability",
+    "Communication",
+    "Problem Solving",
+    "Collaboration",
+    "Time Management",
+    "Critical Thinking",
+  ],
+};

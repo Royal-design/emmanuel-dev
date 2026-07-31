@@ -1,185 +1,211 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Layout } from "./Layout";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { Avatar } from "./Avatar";
-import { TextTypeWriter } from "./TextTypeWriter";
+import { ArrowUpRight } from "lucide-react";
+import { contactInfo } from "@/app/data";
 import { ThemeMode } from "./ThemeMode";
-import { CgClose } from "react-icons/cg";
-
-export const textSequence = [
-  "Front-End Engineer",
-  2000,
-  "Web Developer",
-  2000,
-  "AI Engineer",
-  2000,
-  "",
-];
 
 const navLinks = [
-  { path: "#about", label: "About" },
-  { path: "#skills", label: "Skills" },
-  { path: "#resume", label: "Resume" },
-  { path: "#projects", label: "Projects" },
-  { path: "#contact", label: "Contact" },
+  { href: "#work", label: "Work" },
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#stack", label: "Stack" },
+  { href: "#contact", label: "Contact" },
 ];
 
-export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const [activeSection, setActiveSection] = useState("");
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => {
-      navLinks.forEach((link) => {
-        const section = document.querySelector(link.path);
-        if (section) {
-          const top = section.getBoundingClientRect().top;
-          if (top <= 80 && top >= -section.clientHeight + 80) {
-            setActiveSection(link.path);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-            // Update URL without scrolling
-            if (window.location.hash !== link.path) {
-              window.history.replaceState(null, "", link.path);
-            }
-          }
+    const sections = navLinks
+      .map((l) => document.querySelector(l.href))
+      .filter((el): el is Element => Boolean(el));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
         }
-      });
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
     };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <>
-      <div className="border-b sticky backdrop-blur-lg bg-background/80 z-50 top-0 w-full border-border">
-        <Layout>
-          <div className="flex items-center justify-between py-2">
-            <Link href="#home">
-              <div className="flex cursor-pointer items-center w-50">
-                <Avatar />
-                <div>
-                  <h2 className="text-lg font-bold text-primary-base ">
-                    Emmanuel
-                  </h2>
-                  <div className="text-sm text-secondary-gray">
-                    <TextTypeWriter sequence={textSequence} />
-                  </div>
-                </div>
-              </div>
-            </Link>
+      <header
+        className={`fixed inset-x-0 top-0 z-[110] transition-[background-color,border-color,box-shadow] duration-500 ${
+          scrolled || open
+            ? "border-b border-line bg-bg/85 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent"
+        }`}
+      >
+        <div className="mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between px-5 sm:px-8 md:h-20 md:px-12">
+          <Link
+            href="#top"
+            className="font-display text-xl font-semibold tracking-tight"
+            onClick={() => setOpen(false)}
+          >
+            Emmanuel<span className="text-accent">.</span>
+          </Link>
 
-            <nav className="hidden md:flex items-center font-medium gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  className={`text-sm transition-colors border-b-2 ${
-                    activeSection === link.path
-                      ? "border-primary-base font-semibold"
-                      : "border-transparent hover:border-primary-base"
+          <nav
+            className="hidden items-center gap-8 lg:flex"
+            aria-label="Primary"
+          >
+            {navLinks.map((link, i) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`group relative flex items-center gap-1.5 text-sm transition-colors ${
+                  active === link.href
+                    ? "text-ink"
+                    : "text-ink-2 hover:text-ink"
+                }`}
+              >
+                <span className="font-mono text-[10px] text-accent">
+                  0{i + 1}
+                </span>
+                {link.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
+                    active === link.href ? "w-full" : "w-0 group-hover:w-full"
                   }`}
-                  key={link.path}
-                  href={link.path}
+                />
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <ThemeMode />
+            <Link
+              href={contactInfo.resume}
+              className="hidden items-center gap-1.5 rounded-full border border-line-strong px-4 py-2 font-mono text-xs tracking-[0.12em] text-ink uppercase transition-colors hover:border-accent hover:text-accent md:inline-flex"
+            >
+              Résumé
+            </Link>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              className="relative z-[130] flex h-10 w-10 items-center justify-center lg:hidden"
+            >
+              <span
+                className={`absolute h-px w-6 bg-ink transition-transform duration-300 ${
+                  open ? "rotate-45" : "-translate-y-[4px]"
+                }`}
+              />
+              <span
+                className={`absolute h-px w-6 bg-ink transition-transform duration-300 ${
+                  open ? "-rotate-45" : "translate-y-[4px]"
+                }`}
+              />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 z-[120] flex flex-col bg-bg lg:hidden"
+          >
+            <div className="dot-grid pointer-events-none absolute inset-0 opacity-40" />
+            <nav
+              className="relative flex flex-1 flex-col justify-center gap-1 px-5 pt-20 sm:px-8"
+              aria-label="Mobile"
+            >
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 12 }}
+                  transition={{ delay: 0.08 + i * 0.06 }}
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="group flex items-baseline gap-4 border-b border-line py-4"
+                  >
+                    <span className="font-mono text-xs text-accent">
+                      0{i + 1}
+                    </span>
+                    <span className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+                      {link.label}
+                    </span>
+                    <ArrowUpRight className="h-5 w-5 text-ink-3 transition-colors group-hover:text-accent" />
+                  </Link>
+                </motion.div>
               ))}
             </nav>
 
-            <div className="flex items-center gap-4">
-              <ThemeMode />
-
-              <button
-                className="md:hidden flex flex-col gap-1 w-6 h-6 justify-center z-50 relative"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
-              >
-                <span
-                  className={`w-full h-0.5 rounded-full bg-primary-base transition-transform ${
-                    isMenuOpen ? "rotate-45 translate-y-1.5" : ""
-                  }`}
-                />
-                <span
-                  className={`w-full h-0.5 rounded-full bg-primary-base transition-opacity ${
-                    isMenuOpen ? "opacity-0" : ""
-                  }`}
-                />
-                <span
-                  className={`w-full h-0.5 rounded-full bg-primary-base transition-transform ${
-                    isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                  }`}
-                />
-              </button>
-            </div>
-          </div>
-        </Layout>
-      </div>
-
-      <AnimatePresence>
-        {isMenuOpen && (
-          <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-lg z-50"
-              onClick={() => setIsMenuOpen(false)}
-            />
-
-            {/* Slide-in Menu */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden fixed top-0 right-0 h-full w-[70%] max-w-sm bg-background border-l border-border shadow-2xl z-50 overflow-y-auto"
+              transition={{ delay: 0.4 }}
+              className="relative flex flex-col gap-3 border-t border-line px-5 py-6 sm:px-8"
             >
-              <div className="p-6">
-                <button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="absolute top-6 right-6 w-8 h-8 flex items-center justify-center rounded-full hover:bg-primary-base/10 transition-colors"
-                  aria-label="Close menu"
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-success" />
+                <span className="font-mono text-xs tracking-[0.14em] text-ink-2 uppercase">
+                  {contactInfo.availability}
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs text-ink-3">
+                <a
+                  href={contactInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-accent"
                 >
-                  <CgClose />
-                </button>
-
-                <nav className="flex flex-col gap-2 mt-8">
-                  {navLinks.map((link, index) => (
-                    <motion.div
-                      key={link.path}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        delay: index * 0.1,
-                        duration: 0.3,
-                        ease: "easeOut",
-                      }}
-                    >
-                      <Link
-                        className={`text-base py-2 px-4 block rounded-lg transition-colors ${
-                          activeSection === link.path
-                            ? "text-primary-base font-semibold bg-primary-base/10"
-                            : "text-foreground hover:text-primary-base hover:bg-primary-base/5"
-                        }`}
-                        href={link.path}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </nav>
+                  GitHub ↗
+                </a>
+                <a
+                  href={contactInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-accent"
+                >
+                  LinkedIn ↗
+                </a>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="transition-colors hover:text-accent"
+                >
+                  {contactInfo.email}
+                </a>
               </div>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
   );
-};
+}

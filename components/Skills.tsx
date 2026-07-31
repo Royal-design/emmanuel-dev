@@ -1,12 +1,14 @@
 import { DiVisualstudio } from "react-icons/di";
-import { FaGitAlt, FaGithub, FaJs, FaReact, FaSass } from "react-icons/fa";
-import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io";
+import { FaGitAlt, FaGithub, FaSass } from "react-icons/fa";
+import { IoLogoHtml5, IoLogoCss3 } from "react-icons/io5";
 import { RiNextjsFill } from "react-icons/ri";
 import {
   SiChakraui,
   SiFirebase,
+  SiJavascript,
   SiJson,
   SiPostman,
+  SiReact,
   SiRedux,
   SiShadcnui,
   SiSupabase,
@@ -14,120 +16,104 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
+import { stack } from "@/app/data";
 import { Layout } from "./Layout";
+import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
-const skillCategories = [
-  {
-    title: "Languages",
-    skills: [
-      { name: "HTML5", icon: IoLogoHtml5, color: "#E34F26" },
-      { name: "CSS3", icon: IoLogoCss3, color: "#1572B6" },
-      { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "SCSS", icon: FaSass, color: "#CC6699" },
-      { name: "JSON", icon: SiJson, color: "#5B5EA6" },
-    ],
-  },
-  {
-    title: "Frameworks",
-    skills: [
-      { name: "Next.js", icon: RiNextjsFill, color: "#7C7C7C" },
-      { name: "React", icon: FaReact, color: "#61DAFB" },
-      { name: "Redux", icon: SiRedux, color: "#764ABC" },
-      { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "ShadCN", icon: SiShadcnui, color: "#6D28D9" },
-      { name: "Chakra UI", icon: SiChakraui, color: "#319795" },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      { name: "VS Code", icon: DiVisualstudio, color: "#007ACC" },
-      { name: "Git", icon: FaGitAlt, color: "#F05032" },
-      { name: "GitHub", icon: FaGithub, color: "#8B5CF6" },
-      { name: "Azure DevOps", icon: VscAzureDevops, color: "#0078D7" },
-      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
-      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-      { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
-    ],
-  },
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  HTML5: IoLogoHtml5,
+  CSS3: IoLogoCss3,
+  JavaScript: SiJavascript,
+  TypeScript: SiTypescript,
+  SCSS: FaSass,
+  JSON: SiJson,
+  "Next.js": RiNextjsFill,
+  React: SiReact,
+  Redux: SiRedux,
+  Tailwind: SiTailwindcss,
+  ShadCN: SiShadcnui,
+  "Chakra UI": SiChakraui,
+  Git: FaGitAlt,
+  GitHub: FaGithub,
+  "VS Code": DiVisualstudio,
+  "Azure DevOps": VscAzureDevops,
+  Postman: SiPostman,
+  Firebase: SiFirebase,
+  Supabase: SiSupabase,
+};
+
+const groups = [
+  { title: "Languages", items: stack.languages },
+  { title: "Frameworks", items: stack.frameworks },
+  { title: "Tools & Platforms", items: stack.tools },
 ];
 
-const softSkills = [
-  "Teamwork",
-  "Leadership",
-  "Adaptability",
-  "Communication",
-  "Problem Solving",
-  "Collaboration",
-  "Time Management",
-  "Critical Thinking",
-];
-
-export const Skills = () => {
+export function Skills() {
   return (
-    <section className="bg-background py-12 md:py-16 scroll-mt-16" id="skills">
-      <Layout className="md:w-[85%]">
-        {/* Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary-base mb-2">
-            Skills
-          </h2>
-          <p className="text-sm text-primary-base/60 max-w-lg">
-            Technologies and tools I work with to build modern web applications.
-          </p>
-        </div>
+    <section id="stack" className="scroll-mt-20 border-b border-line py-24 md:py-36">
+      <Layout>
+        <SectionHeading
+          index="03"
+          label="Stack"
+          title="Tools I reach for, daily."
+          note="The technologies behind the projects on this page"
+        />
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          {skillCategories.map((category) => (
-            <div
-              key={category.title}
-              className="bg-primary-gray-300/30 border border-primary-gray-300/50 rounded-lg p-4"
-            >
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mb-3">
-                {category.title}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => {
-                  const Icon = skill.icon;
-                  return (
-                    <div
-                      key={skill.name}
-                      className="group flex items-center gap-2 px-3 py-1.5 bg-primary-gray-300/40 rounded-md border border-transparent hover:border-primary-base/20 hover:bg-primary-gray-300/60 transition-all duration-200 cursor-default"
-                    >
-                      <Icon
-                        className="text-base opacity-70 group-hover:opacity-100 transition-opacity"
-                        style={{ color: skill.color }}
-                      />
-                      <span className="text-xs font-medium text-primary-base/80 group-hover:text-primary-base transition-colors">
-                        {skill.name}
-                      </span>
-                    </div>
-                  );
-                })}
+        <div className="grid gap-6 md:grid-cols-3 md:gap-4">
+          {groups.map((group, gi) => (
+            <Reveal key={group.title} delay={gi * 0.08}>
+              <div className="border border-line bg-surface">
+                <div className="flex items-center justify-between border-b border-line px-5 py-3.5">
+                  <h3 className="font-mono text-[11px] font-medium tracking-[0.22em] text-ink-2 uppercase">
+                    {group.title}
+                  </h3>
+                  <span className="tabular font-mono text-[10px] text-ink-3">
+                    0{group.items.length}
+                  </span>
+                </div>
+                <ul className="divide-y divide-line">
+                  {group.items.map((item) => {
+                    const Icon = iconMap[item];
+                    return (
+                      <li key={item}>
+                        <div className="group flex items-center justify-between px-5 py-3 transition-colors hover:bg-accent-soft">
+                          <span className="flex items-center gap-3 text-sm text-ink-2 transition-colors group-hover:text-ink">
+                            {Icon && (
+                              <Icon className="h-4 w-4 text-ink-3 transition-colors group-hover:text-accent" />
+                            )}
+                            {item}
+                          </span>
+                          <span
+                            className="h-1 w-1 rounded-full bg-ink-3 transition-all group-hover:w-3 group-hover:rounded-sm group-hover:bg-accent"
+                            aria-hidden="true"
+                          />
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
-        {/* Soft Skills - Compact inline style */}
-        <div className="bg-primary-gray-300/20 border border-primary-gray-300/40 rounded-lg p-4">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            <span className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mr-2">
-              Soft Skills
+        <Reveal delay={0.15}>
+          <div className="mt-10 flex flex-wrap items-center gap-x-2 gap-y-3">
+            <span className="mr-2 font-mono text-[11px] font-medium tracking-[0.22em] text-ink-3 uppercase">
+              Beyond the code
             </span>
-            {softSkills.map((skill, index) => (
+            {stack.soft.map((skill) => (
               <span
-                key={index}
-                className="text-xs text-primary-base/70 before:content-['·'] before:mr-1.5 before:text-primary-base/30"
+                key={skill}
+                className="rounded-full border border-line px-3 py-1 font-mono text-[11px] tracking-[0.08em] text-ink-2 uppercase transition-colors hover:border-accent/50 hover:text-accent"
               >
                 {skill}
               </span>
             ))}
           </div>
-        </div>
+        </Reveal>
       </Layout>
     </section>
   );
-};
+}

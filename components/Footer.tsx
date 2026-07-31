@@ -1,84 +1,112 @@
-"use client";
-
 import Link from "next/link";
-import { FiGithub, FiHeart, FiLinkedin, FiMail } from "react-icons/fi";
+import { ArrowUp } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { contactInfo } from "@/app/data";
 import { Layout } from "./Layout";
 
-const socialLinks = [
-  { href: "https://github.com/Royal-design", icon: FiGithub, label: "GitHub" },
-  {
-    href: "https://www.linkedin.com/in/emmanuel-olowookere-869262216",
-    icon: FiLinkedin,
-    label: "LinkedIn",
-  },
-  {
-    href: "mailto:olowookereoluwaseun25@gmail.com",
-    icon: FiMail,
-    label: "Email",
-  },
+const navLinks = [
+  { href: "#work", label: "Work" },
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#stack", label: "Stack" },
+  { href: "#contact", label: "Contact" },
 ];
 
-export const Footer = () => {
+export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-background border-t border-primary-gray-300">
-      <Layout className="py-4 md:w-[85%]">
-        <div className="grid md:grid-cols-2 gap-8 mb-6">
-          {/* Left */}
-          <div>
-            <h3 className="text-lg font-semibold text-primary-base mb-2">
-              Emmanuel
-            </h3>
-            <p className="text-sm text-primary-base/60 mb-3">
-              Frontend Engineer
+    <footer className="border-t border-line bg-surface/40">
+      <Layout className="py-12 md:py-16">
+        <div className="grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Link href="#top" className="font-display text-2xl font-semibold tracking-tight">
+              Emmanuel<span className="text-accent">.</span>
+            </Link>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-2">
+              Frontend engineer building fast, accessible web applications with
+              modern technologies — always open to new challenges.
             </p>
-            <p className="text-sm text-primary-base/50 leading-relaxed max-w-sm mb-4">
-              Building fast, accessible web applications with modern
-              technologies. Always open to new challenges and opportunities.
-            </p>
-            <div className="flex items-center gap-2 px-3 py-1.5 w-fit rounded-full bg-primary-gray-300/30 border border-primary-gray-300/40">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-xs text-primary-base/60">
-                Available for opportunities
+            <div className="mt-5 flex items-center gap-2.5">
+              <span className="h-2 w-2 rounded-full bg-success" />
+              <span className="font-mono text-[11px] tracking-[0.16em] text-ink-2 uppercase">
+                {contactInfo.availability}
               </span>
             </div>
           </div>
 
-          {/* Right */}
-          <div className="md:text-right">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-primary-base/50 mb-4">
-              Let&apos;s Connect
+          <div className="md:col-span-3">
+            <h3 className="mb-4 font-mono text-[11px] font-medium tracking-[0.22em] text-ink-3 uppercase">
+              Navigate
             </h3>
-            <div className="flex flex-wrap md:justify-end gap-2">
-              {socialLinks.map((link) => {
-                const Icon = link.icon;
-                return (
+            <ul className="space-y-2.5">
+              {navLinks.map((link) => (
+                <li key={link.href}>
                   <Link
-                    key={link.label}
                     href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-2 bg-primary-gray-300/30 text-primary-base/60 rounded-lg border border-primary-gray-300/40 hover:border-primary-base/20 hover:text-primary-base transition-colors"
+                    className="text-sm text-ink-2 transition-colors hover:text-accent"
                   >
-                    <Icon className="w-4 h-4" />
-                    <span className="text-sm">{link.label}</span>
+                    {link.label}
                   </Link>
-                );
-              })}
-            </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-4">
+            <h3 className="mb-4 font-mono text-[11px] font-medium tracking-[0.22em] text-ink-3 uppercase">
+              Connect
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link
+                  href={contactInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-ink-2 transition-colors hover:text-accent"
+                >
+                  <FaGithub className="h-4 w-4" aria-hidden="true" />
+                  GitHub
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={contactInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-ink-2 transition-colors hover:text-accent"
+                >
+                  <FaLinkedinIn className="h-4 w-4" aria-hidden="true" />
+                  LinkedIn
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="text-sm break-all text-ink-2 transition-colors hover:text-accent"
+                >
+                  {contactInfo.email}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="pt-4 border-t border-primary-gray-300/70 flex flex-col md:flex-row justify-center items-center gap-3">
-          <p className="text-xs text-center text-primary-base/50">
-            © {currentYear} Emmanuel. Built with{" "}
-            <FiHeart className="w-3 h-3 text-red-500 inline mx-0.5" /> using
-            Next.js
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line pt-6 md:flex-row md:items-center">
+          <p className="font-mono text-[11px] tracking-[0.08em] text-ink-3">
+            © {currentYear} Emmanuel Olowookere. Designed & built with Next.js.
           </p>
+          <a
+            href="#top"
+            className="group inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.16em] text-ink-2 uppercase transition-colors hover:text-accent"
+          >
+            Back to top
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-line-strong transition-colors group-hover:border-accent">
+              <ArrowUp className="h-3.5 w-3.5" />
+            </span>
+          </a>
         </div>
       </Layout>
     </footer>
   );
-};
+}

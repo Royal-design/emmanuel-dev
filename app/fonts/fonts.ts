@@ -1,25 +1,23 @@
-import { Poppins, Inter, Montserrat, DM_Serif_Display } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Inter,
+  JetBrains_Mono,
+} from "next/font/google";
 
-export const poppins = Poppins({
+export const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["400"],
+  variable: "--font-bricolage",
+  display: "swap",
 });
 
 export const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["400"],
+  display: "swap",
 });
 
-export const montserrat = Montserrat({
+export const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["400"],
-});
-
-export const dmSans = DM_Serif_Display({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-dm-serif",
+  variable: "--font-jetbrains",
+  display: "swap",
 });

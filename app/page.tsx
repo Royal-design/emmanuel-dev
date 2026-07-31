@@ -1,32 +1,38 @@
-import { AboutMe } from "@/components/aboutMe";
+import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
+import CustomCursor from "@/components/CustomCursor";
+import { Experience } from "@/components/Experience";
 import { Footer } from "@/components/Footer";
-import { Home } from "@/components/home";
-import { Layout } from "@/components/Layout";
-import { Navbar } from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import { Marquee } from "@/components/Marquee";
+import Navbar from "@/components/Navbar";
 import { Projects } from "@/components/Projects";
-import { Resume } from "@/components/Resume";
-import ScrollToTop from "@/components/ScrollToTop";
-import { Services } from "@/components/Services";
+import ScrollProgress from "@/components/ScrollProgress";
 import { Skills } from "@/components/Skills";
 
 export default function LandingPage() {
   return (
-    <div>
+    <>
+      <a
+        href="#main"
+        className="sr-only z-[9999] rounded-full bg-accent px-5 py-2 font-mono text-xs text-white focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
+      >
+        Skip to content
+      </a>
+      <div className="grain-overlay" aria-hidden="true" />
+      <ScrollProgress />
+      <CustomCursor />
       <Navbar />
-      <Home />
-      <div className="bg-secondary py-12 scroll-mt-16" id="about">
-        <Layout className="flex flex-col md:flex-row gap-8 md:gap-12">
-          <AboutMe />
-          <Services />
-        </Layout>
-      </div>
-      <Skills />
-      <Resume />
-      <Projects />
-      <Contact />
-      <ScrollToTop />
+      <main id="main">
+        <Hero />
+        <Marquee />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
