@@ -403,7 +403,7 @@ export const contactInfo = {
   location: "Ibadan, Nigeria",
   coords: "7.3775° N, 3.9470° E",
   github: "https://github.com/Royal-design",
-  linkedin: "https://www.linkedin.com/in/emmanuel-olowookere-869262216",
+  linkedin: "https://www.linkedin.com/in/oluwaseun-olowookere-869262216",
   resume: "/resume.pdf",
   availability: "Open to new opportunities",
 };

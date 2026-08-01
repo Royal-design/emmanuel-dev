@@ -117,7 +117,7 @@ const personJsonLd = {
   },
   sameAs: [
     "https://github.com/Royal-design",
-    "https://www.linkedin.com/in/emmanuel-olowookere-869262216",
+    "https://www.linkedin.com/in/oluwaseun-olowookere-869262216",
   ],
   knowsAbout: [
     "React",
