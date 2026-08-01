@@ -90,11 +90,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/icon.png", type: "image/png", sizes: "248x244" },
-      { url: "/avatar.png", type: "image/png", sizes: "248x244" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
     ],
     shortcut: "/favicon.ico",
-    apple: [{ url: "/apple-icon.png", sizes: "248x244", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.json",
   referrer: "origin-when-cross-origin",
@@ -200,7 +199,7 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="248x244" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
         <meta name="theme-color" content="#0c0c0a" />
       </head>
       <body

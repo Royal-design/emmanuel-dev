@@ -10,14 +10,8 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/avatar.png",
-      "sizes": "248x244",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
       "src": "/icon.png",
-      "sizes": "248x244",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
