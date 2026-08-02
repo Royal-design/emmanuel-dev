@@ -171,7 +171,7 @@ export const projects: Project[] = [
   },
   {
     id: 10,
-    title: "Trauma Informed Care (TIC)",
+    title: "Triggerless",
     category: "full-stack",
     description: `A comprehensive multi-tenant platform designed to connect therapists with clients and organizations. The system features a robust dashboard with specialized portals for admins, agents, organizations, and clients, facilitating seamless mental health support and organizational wellness management. (Test Access - Email: admin@tic.com | Pass: Pa55word@123)`,
     projectLink: "https://trauma-app.netlify.app/",
