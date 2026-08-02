@@ -127,6 +127,32 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 20,
+    title: "Taskify",
+    category: "full-stack",
+    description:
+      "A production-grade project and task management workspace where teams plan, track, and ship work. Taskify combines drag-and-drop kanban boards, live project analytics, and a calendar scheduler in one calm, cohesive interface, powered by real-time Firebase sync and a full design-token system with dark mode. (Test Access - Register or sign in with Google)",
+    projectLink: "https://taskify-workspace.vercel.app/",
+    githubLink: "https://github.com/Royal-design/task-manager",
+    imageLink: "/taskify.webp",
+    role: "Frontend Engineer",
+    techStacks: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Firebase",
+      "Framer Motion",
+      "Chart.js",
+    ],
+    highlights: [
+      "Drag-and-drop kanban boards with real-time status sync across projects and tasks",
+      "End-to-end auth (email + Google) with protected routes and profile photo uploads",
+      "Live analytics dashboards, calendar scheduling, and full dark-mode design system",
+    ],
+  },
+  {
     id: 22,
     title: "Soloa AI Platform",
     category: "full-stack",
@@ -412,22 +438,8 @@ export const contactInfo = {
 };
 
 export const stack = {
-  languages: [
-    "HTML5",
-    "CSS3",
-    "JavaScript",
-    "TypeScript",
-    "SCSS",
-    "JSON",
-  ],
-  frameworks: [
-    "Next.js",
-    "React",
-    "Redux",
-    "Tailwind",
-    "ShadCN",
-    "Chakra UI",
-  ],
+  languages: ["HTML5", "CSS3", "JavaScript", "TypeScript", "SCSS", "JSON"],
+  frameworks: ["Next.js", "React", "Redux", "Tailwind", "ShadCN", "Chakra UI"],
   tools: [
     "Git",
     "GitHub",
