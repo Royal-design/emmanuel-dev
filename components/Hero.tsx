@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import { contactInfo } from "@/app/data";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
-import { contactInfo } from "@/app/data";
+import Image from "next/image";
+import Link from "next/link";
 import { Layout } from "./Layout";
 import { Magnetic } from "./Magnetic";
 
@@ -66,7 +66,9 @@ export default function Hero() {
                 className="flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] text-ink-2 uppercase sm:text-xs"
               >
                 <span className="text-ink-3">{"//"}</span>
-                <span className="min-w-0">Frontend Engineer — {contactInfo.location}</span>
+                <span className="min-w-0">
+                  Full-Stack Engineer — {contactInfo.location}
+                </span>
                 <span
                   className="inline-block h-3 w-[7px] shrink-0 animate-blink bg-accent"
                   aria-hidden="true"
@@ -76,7 +78,7 @@ export default function Hero() {
               <h1 className="font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.92] font-bold tracking-tight [overflow-wrap:anywhere]">
                 <span className="block overflow-hidden pb-[0.08em]">
                   <motion.span variants={lineReveal} className="block">
-                    Emmanuel
+                    Oluwaseun
                   </motion.span>
                 </span>
                 <span className="block overflow-hidden pb-[0.2em] pt-[0.04em]">
@@ -91,9 +93,10 @@ export default function Hero() {
                 className="max-w-xl text-base leading-relaxed text-ink-2 md:text-lg"
               >
                 I turn complex products into fast, accessible, beautifully
-                engineered interfaces — with React, Next.js and TypeScript.
-                From AI platforms to enterprise dashboards, I build software
-                that feels obvious to use.
+                engineered software — across the entire stack. With React,
+                Next.js, TypeScript and Node.js on the front, and Express,
+                NestJS, Python and PostgreSQL behind the scenes, I build
+                products that feel obvious to use.
               </motion.p>
 
               <motion.div
@@ -130,7 +133,7 @@ export default function Hero() {
                 </span>
                 <span className="tabular">3+ yrs · 20+ projects</span>
                 <span className="hidden sm:inline">
-                  Building AI interfaces @ Cartolinks · Vatebra
+                  Full-stack & AI products @ Cartolinks · Vatebra
                 </span>
                 <span className="hidden items-center gap-1.5 md:flex">
                   <span>{contactInfo.coords}</span>
@@ -162,7 +165,7 @@ export default function Hero() {
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
                     src="/portrait.webp"
-                    alt="Portrait of Emmanuel Olowookere"
+                    alt="Portrait of Oluwaseun Olowookere"
                     fill
                     priority
                     sizes="(max-width: 1024px) 320px, 340px"
@@ -173,10 +176,10 @@ export default function Hero() {
                 <figcaption className="flex items-center justify-between gap-3 border-t border-line px-4 py-3">
                   <div className="min-w-0">
                     <p className="truncate font-mono text-[11px] tracking-[0.14em] text-ink uppercase">
-                      E. Olowookere
+                      O. Olowookere
                     </p>
                     <p className="mt-0.5 truncate font-mono text-[10px] text-ink-3">
-                      Frontend Engineer — Ibadan, NG
+                      Full-Stack Engineer — Osun State, NG
                     </p>
                   </div>
                   <span className="flex items-center gap-1.5">

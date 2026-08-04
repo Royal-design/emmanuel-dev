@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import { Projects } from "@/components/Projects";
 import ScrollProgress from "@/components/ScrollProgress";
 import { Skills } from "@/components/Skills";
+// import { StackWindow } from "@/components/StackWindow";
 
 export default function LandingPage() {
   return (
@@ -25,6 +26,7 @@ export default function LandingPage() {
       <Navbar />
       <main id="main">
         <Hero />
+        {/* <StackWindow /> */}
         <Marquee />
         <About />
         <Experience />

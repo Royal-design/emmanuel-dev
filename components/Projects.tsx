@@ -12,15 +12,15 @@ import { SectionHeading } from "./SectionHeading";
 
 const categoryLabel: Record<Project["category"], string> = {
   frontend: "Frontend",
-  "full-stack": "Full Stack",
-  ai: "AI",
+  "full-stack": "Full-Stack",
+  ai: "AI & Automation",
 };
 
 const categories: { key: Project["category"] | "all"; label: string }[] = [
-  { key: "all", label: "All" },
-  { key: "full-stack", label: "Full Stack" },
+  { key: "all", label: "All Work" },
+  { key: "full-stack", label: "Full-Stack" },
   { key: "frontend", label: "Frontend" },
-  { key: "ai", label: "AI" },
+  { key: "ai", label: "AI & Automation" },
 ];
 
 function ProjectModal({
@@ -373,26 +373,42 @@ export function Projects() {
           index="04"
           label="Selected Work"
           title="Products, shipped."
-          note="Twelve projects — client platforms, AI tools and personal builds"
+          note="Fourteen projects — full-stack platforms, AI tools and personal builds"
         />
 
         <Reveal>
           <div className="mb-10 flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                type="button"
-                onClick={() => setCategory(cat.key)}
-                aria-pressed={category === cat.key}
-                className={`rounded-full border px-4 py-2 font-mono text-[11px] tracking-[0.14em] uppercase transition-colors ${
-                  category === cat.key
-                    ? "border-accent bg-accent text-white dark:text-bg"
-                    : "border-line-strong text-ink-2 hover:border-accent hover:text-accent"
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const count =
+                cat.key === "all"
+                  ? projects.length
+                  : projects.filter((p) => p.category === cat.key).length;
+              return (
+                <button
+                  key={cat.key}
+                  type="button"
+                  onClick={() => setCategory(cat.key)}
+                  aria-pressed={category === cat.key}
+                  className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 font-mono text-[11px] tracking-[0.14em] uppercase transition-colors ${
+                    category === cat.key
+                      ? "border-accent bg-accent text-white dark:text-bg"
+                      : "border-line-strong text-ink-2 hover:border-accent hover:text-accent"
+                  }`}
+                >
+                  {cat.label}
+                  <span
+                    aria-hidden="true"
+                    className={`tabular rounded-full px-1.5 py-0.5 text-[10px] leading-none ${
+                      category === cat.key
+                        ? "bg-white/20 text-white dark:text-bg"
+                        : "bg-surface-2 text-ink-3"
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </Reveal>
 

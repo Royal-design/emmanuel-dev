@@ -1,6 +1,6 @@
-# Emmanuel Olowookere – Portfolio
+# Oluwaseun Olowookere – Portfolio
 
-Welcome to my personal portfolio! This project showcases my work as a **Front-End Developer** with a passion for building responsive, accessible, and visually engaging web applications. It highlights my projects, skills, experience, and provides a way to get in touch.
+Welcome to my personal portfolio! This project showcases my work as a **Full-Stack Developer** with a passion for building responsive, accessible, and visually engaging web applications — from pixel-perfect frontends to robust backends and databases. It highlights my projects, skills, experience, and provides a way to get in touch.
 
 ---
 
@@ -15,9 +15,10 @@ Welcome to my personal portfolio! This project showcases my work as a **Front-En
 This project is built with modern web technologies:
 
 - **Framework:** [Next.js 15](https://nextjs.org/)
-- **Language:** TypeScript, JavaScript
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
+- **Frontend:** React, TypeScript, Tailwind CSS, Framer Motion
+- **Backend:** Node.js, NestJS, Express, FastAPI, Prisma
+- **Database:** PostgreSQL, Firebase, Supabase
+- **Language:** TypeScript, JavaScript, Python
 - **Icons:** React Icons
 - **Hosting & Analytics:** Vercel, Vercel Analytics
 - **Version Control:** Git & GitHub
@@ -38,8 +39,8 @@ This project is built with modern web technologies:
 
 - **Home:** Hero section with introduction and featured skills
 - **About Me:** Detailed information, skills, and professional experience
-- **Services:** Front-end engineering services offered
-- **Skills:** Technical skills and expertise
+- **Services:** Full-stack engineering services offered
+- **Skills:** Technical skills and expertise (frontend, backend, tools)
 - **Resume:** Downloadable resume
 - **Projects:** Showcase of personal and client projects
 - **Contact:** Contact form with social links

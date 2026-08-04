@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 /* eslint-disable @next/next/no-img-element */
 
 export const runtime = "edge";
-export const alt = "Emmanuel Olowookere - Frontend Engineer";
+export const alt = "Oluwaseun Olowookere - Full-Stack Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -36,7 +36,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            React / Next.js / TypeScript
+            React / Next.js / TypeScript / Node.js
           </div>
           <div
             style={{
@@ -47,7 +47,7 @@ export default function Image() {
               lineHeight: 1,
             }}
           >
-            <span>Emmanuel</span>
+            <span>Oluwaseun</span>
             <span>Olowookere</span>
           </div>
           <div
@@ -58,8 +58,8 @@ export default function Image() {
               maxWidth: 680,
             }}
           >
-            Frontend engineer building fast, accessible web applications and AI
-            product interfaces.
+            Full-stack engineer building fast, accessible web applications and
+            AI product interfaces — frontend to backend.
           </div>
         </div>
         <div
@@ -75,7 +75,7 @@ export default function Image() {
         >
           <img
             src="https://emmanuel-developer.vercel.app/avatar.png"
-            alt="Emmanuel Olowookere"
+            alt="Oluwaseun Olowookere"
             width={300}
             height={300}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}

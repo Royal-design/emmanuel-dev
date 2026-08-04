@@ -5,10 +5,10 @@ import { contactInfo } from "@/app/data";
 import { Layout } from "./Layout";
 
 const navLinks = [
-  { href: "#work", label: "Work" },
+  { href: "#work", label: "Projects" },
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#stack", label: "Stack" },
+  { href: "#experience", label: "Journey" },
+  { href: "#stack", label: "Toolbox" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -21,11 +21,11 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link href="#top" className="font-display text-2xl font-semibold tracking-tight">
-              Emmanuel<span className="text-accent">.</span>
+              Oluwaseun<span className="text-accent">.</span>
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-2">
-              Frontend engineer building fast, accessible web applications with
-              modern technologies — always open to new challenges.
+              Full-stack engineer building fast, accessible web applications —
+              frontend to backend — always open to new challenges.
             </p>
             <div className="mt-5 flex items-center gap-2.5">
               <span className="h-2 w-2 rounded-full bg-success" />
@@ -94,7 +94,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line pt-6 md:flex-row md:items-center">
           <p className="font-mono text-[11px] tracking-[0.08em] text-ink-3">
-            © {currentYear} Emmanuel Olowookere. Designed & built with Next.js.
+            © {currentYear} Oluwaseun Olowookere. Designed & built with Next.js.
           </p>
           <a
             href="#top"

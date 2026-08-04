@@ -8,10 +8,10 @@ import { bricolage, inter, jetbrainsMono } from "./fonts/fonts";
 import "./globals.css";
 
 const siteUrl = "https://emmanuel-developer.vercel.app";
-const siteName = "Emmanuel Olowookere";
-const title = "Emmanuel Olowookere - Frontend Engineer";
+const siteName = "Oluwaseun Olowookere";
+const title = "Oluwaseun Olowookere - Full-Stack Engineer";
 const description =
-  "Portfolio of Emmanuel Olowookere, a frontend engineer in Nigeria building fast, accessible React, Next.js, TypeScript, and AI-powered web applications for modern teams.";
+  "Portfolio of Oluwaseun Olowookere, a full-stack engineer in Nigeria building fast, accessible React, Next.js, TypeScript, Node.js, Python and PostgreSQL applications from frontend to backend.";
 
 export const metadata: Metadata = {
   title: {
@@ -21,34 +21,41 @@ export const metadata: Metadata = {
   description,
   applicationName: siteName,
   keywords: [
-    "Emmanuel Olowookere",
+    "Oluwaseun Olowookere",
     "Oluwaseun Emmanuel",
-    "Frontend Developer",
-    "Frontend Engineer",
+    "Full-Stack Developer",
+    "Full-Stack Engineer",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
-    "AI Frontend Engineer",
+    "Node.js Developer",
+    "NestJS Developer",
+    "Express Developer",
+    "FastAPI",
+    "Python Developer",
+    "PostgreSQL",
+    "Prisma",
     "Web Developer Nigeria",
-    "Frontend Developer Ibadan",
+    "Full-Stack Developer Ibadan",
     "React Portfolio",
     "Next.js Portfolio",
     "JavaScript Developer",
     "Tailwind CSS Developer",
     "Web Development",
     "UI Developer",
-    "Frontend Development Services",
-    "Hire Frontend Developer",
-    "Remote Frontend Developer",
+    "Backend Development",
+    "Full-Stack Development Services",
+    "Hire Full-Stack Developer",
+    "Remote Full-Stack Developer",
   ],
   authors: [
     {
-      name: "Emmanuel Olowookere",
+      name: "Oluwaseun Olowookere",
       url: siteUrl,
     },
   ],
-  creator: "Emmanuel Olowookere",
-  publisher: "Emmanuel Olowookere",
+  creator: "Oluwaseun Olowookere",
+  publisher: "Oluwaseun Olowookere",
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
@@ -65,7 +72,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Emmanuel Olowookere - Frontend Engineer Portfolio",
+        alt: "Oluwaseun Olowookere - Full-Stack Engineer Portfolio",
       },
     ],
   },
@@ -103,11 +110,11 @@ export const metadata: Metadata = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Emmanuel Olowookere",
+  name: "Oluwaseun Olowookere",
   alternateName: "Oluwaseun Emmanuel",
   url: siteUrl,
   image: `${siteUrl}/avatar.png`,
-  jobTitle: "Frontend Engineer",
+  jobTitle: "Full-Stack Engineer",
   description,
   address: {
     "@type": "PostalAddress",
@@ -123,8 +130,16 @@ const personJsonLd = {
     "Next.js",
     "TypeScript",
     "JavaScript",
+    "Node.js",
+    "NestJS",
+    "Express",
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Prisma",
     "Tailwind CSS",
-    "Frontend Development",
+    "Full-Stack Development",
+    "Backend Development",
     "Web Development",
     "UI/UX",
     "AI Interfaces",
@@ -144,32 +159,34 @@ const websiteJsonLd = {
   url: siteUrl,
   author: {
     "@type": "Person",
-    name: "Emmanuel Olowookere",
+    name: "Oluwaseun Olowookere",
   },
   description,
   publisher: {
     "@type": "Person",
-    name: "Emmanuel Olowookere",
+    name: "Oluwaseun Olowookere",
   },
 };
 
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: `${siteName} - Frontend Development Services`,
+  name: `${siteName} - Full-Stack Development Services`,
   url: siteUrl,
   image: `${siteUrl}/avatar.png`,
   description:
-    "Frontend development services for responsive websites, dashboards, AI interfaces, and React or Next.js applications.",
+    "Full-stack development services for responsive websites, dashboards, AI interfaces, and React, Next.js, Node.js or Python applications.",
   areaServed: ["Nigeria", "Worldwide"],
   founder: {
     "@type": "Person",
-    name: "Emmanuel Olowookere",
+    name: "Oluwaseun Olowookere",
   },
   serviceType: [
-    "Frontend Development",
+    "Full-Stack Development",
     "React Development",
     "Next.js Development",
+    "Backend Development",
+    "API Development",
     "UI Engineering",
     "AI Product Interface Development",
   ],

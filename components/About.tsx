@@ -1,3 +1,4 @@
+import { contactInfo } from "@/app/data";
 import {
   FiClock,
   FiCode,
@@ -11,14 +12,14 @@ import {
   FiUser,
   FiZap,
 } from "react-icons/fi";
-import { contactInfo } from "@/app/data";
 import { Layout } from "./Layout";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 const highlights = [
-  "Pixel-perfect, responsive UI development",
-  "Modern React & Next.js applications",
+  "End-to-end full-stack web development",
+  "Modern React, Next.js & TypeScript applications",
+  "RESTful APIs & PostgreSQL data modeling",
   "Performance optimization & accessibility",
   "Clean, maintainable code architecture",
 ];
@@ -34,14 +35,19 @@ const personalInfo = [
   { icon: FiGlobe, label: "Languages", value: "English, Yoruba" },
   { icon: FiMapPin, label: "Location", value: contactInfo.location },
   { icon: FiClock, label: "Experience", value: "3+ Years" },
-  { icon: FiSmartphone, label: "Focus", value: "AI Interfaces · Dashboards" },
+  { icon: FiSmartphone, label: "Focus", value: "Full-Stack · AI Interfaces" },
 ];
 
 const services = [
   {
     icon: FiCode,
-    title: "Frontend Development",
-    description: "React, Next.js, TypeScript & Tailwind CSS applications",
+    title: "Full-Stack Development",
+    description: "React, Next.js, Node.js, NestJS & Express applications",
+  },
+  {
+    icon: FiGitBranch,
+    title: "Backend & APIs",
+    description: "REST APIs, Express & NestJS services, PostgreSQL & Prisma",
   },
   {
     icon: FiLayout,
@@ -54,11 +60,6 @@ const services = [
     description: "Fast loading, optimized web experiences",
   },
   {
-    icon: FiGitBranch,
-    title: "API Integration",
-    description: "RESTful APIs & state management solutions",
-  },
-  {
     icon: FiPenTool,
     title: "Design Translation",
     description: "Figma to production-ready, pixel-perfect UI",
@@ -67,32 +68,35 @@ const services = [
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-20 border-b border-line py-24 md:py-36">
+    <section
+      id="about"
+      className="scroll-mt-20 border-b border-line py-24 md:py-36"
+    >
       <Layout>
         <SectionHeading
           index="01"
           label="About"
           title="I build software that feels engineered, not assembled."
-          note="Frontend engineer · Ibadan, Nigeria"
+          note="Full-stack engineer · Osun State, Nigeria"
         />
 
         <div className="grid gap-12 md:grid-cols-12 md:gap-16">
           <div className="min-w-0 md:col-span-7">
             <Reveal>
               <p className="font-display text-2xl leading-snug font-medium tracking-tight text-balance md:text-3xl">
-                I&apos;m a front-end engineer who treats the browser as a serious
-                medium — turning product ideas into fast, accessible interfaces
+                I&apos;m a full-stack engineer who treats software as a serious
+                medium — turning product ideas into fast, accessible products
                 through clean code and deliberate design.
               </p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-xl leading-relaxed text-ink-2">
-                I specialize in React, Next.js and TypeScript, with a focus on
-                AI-powered products and enterprise dashboards. My work spans
-                customer engagement platforms, learning management systems and
-                creative tools — each one shipped to production and used by
-                real people.
+                I specialize in React, Next.js and TypeScript on the front end,
+                with Node.js, Express, NestJS and PostgreSQL on the back end. My
+                work spans AI-powered products, enterprise dashboards,
+                e-commerce platforms and full-stack applications — each one
+                shipped to production and used by real people.
               </p>
             </Reveal>
 
@@ -167,7 +171,10 @@ export function About() {
                         </>
                       );
                       return (
-                        <div key={item.label} className="flex items-center gap-4 px-5 py-4">
+                        <div
+                          key={item.label}
+                          className="flex items-center gap-4 px-5 py-4"
+                        >
                           <Icon
                             className="h-4 w-4 shrink-0 text-accent"
                             aria-hidden="true"
@@ -191,7 +198,9 @@ export function About() {
               <Reveal delay={0.18}>
                 <p className="mt-6 font-mono text-xs leading-relaxed text-ink-3">
                   <span className="text-accent">$</span> echo{" "}
-                  <span>&quot;let&apos;s build something that ships.&quot;</span>
+                  <span>
+                    &quot;let&apos;s build something that ships.&quot;
+                  </span>
                 </p>
               </Reveal>
             </div>

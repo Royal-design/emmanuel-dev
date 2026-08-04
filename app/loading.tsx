@@ -15,7 +15,7 @@ export default function Loading() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Emmanuel<span className="text-accent">.</span>
+        Oluwaseun<span className="text-accent">.</span>
       </motion.p>
       <div className="mt-6 h-px w-40 overflow-hidden bg-line">
         <motion.div

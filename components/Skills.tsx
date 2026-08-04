@@ -4,10 +4,16 @@ import { IoLogoHtml5, IoLogoCss3 } from "react-icons/io5";
 import { RiNextjsFill } from "react-icons/ri";
 import {
   SiChakraui,
+  SiExpress,
+  SiFastapi,
   SiFirebase,
   SiJavascript,
   SiJson,
+  SiNestjs,
+  SiPostgresql,
   SiPostman,
+  SiPrisma,
+  SiPython,
   SiReact,
   SiRedux,
   SiShadcnui,
@@ -26,10 +32,14 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   CSS3: IoLogoCss3,
   JavaScript: SiJavascript,
   TypeScript: SiTypescript,
+  Python: SiPython,
   SCSS: FaSass,
   JSON: SiJson,
   "Next.js": RiNextjsFill,
   React: SiReact,
+  NestJS: SiNestjs,
+  Express: SiExpress,
+  FastAPI: SiFastapi,
   Redux: SiRedux,
   Tailwind: SiTailwindcss,
   ShadCN: SiShadcnui,
@@ -41,6 +51,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Postman: SiPostman,
   Firebase: SiFirebase,
   Supabase: SiSupabase,
+  PostgreSQL: SiPostgresql,
+  Prisma: SiPrisma,
 };
 
 const groups = [

@@ -8,10 +8,10 @@ import { contactInfo } from "@/app/data";
 import { ThemeMode } from "./ThemeMode";
 
 const navLinks = [
-  { href: "#work", label: "Work" },
+  { href: "#work", label: "Projects" },
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#stack", label: "Stack" },
+  { href: "#experience", label: "Journey" },
+  { href: "#stack", label: "Toolbox" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -67,7 +67,7 @@ export default function Navbar() {
             className="font-display text-xl font-semibold tracking-tight"
             onClick={() => setOpen(false)}
           >
-            Emmanuel<span className="text-accent">.</span>
+            Oluwaseun<span className="text-accent">.</span>
           </Link>
 
           <nav

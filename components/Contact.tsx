@@ -20,7 +20,7 @@ const socials = [
     href: contactInfo.linkedin,
     icon: FaLinkedinIn,
     label: "LinkedIn",
-    value: "Emmanuel Olowookere",
+    value: "Oluwaseun Olowookere",
   },
   {
     href: contactInfo.whatsapp,
@@ -45,10 +45,10 @@ export function Contact() {
           <div className="min-w-0 md:col-span-7">
             <Reveal>
               <p className="max-w-xl leading-relaxed text-ink-2">
-                I&apos;m currently available for frontend roles, contract work and
+                I&apos;m currently available for full-stack roles, contract work and
                 ambitious product teams — remote or on-site in Nigeria. If you
-                have a product to build, a dashboard to refine, or an AI
-                interface that needs to feel effortless, let&apos;s talk.
+                have a product to build, an API to design, or an AI product
+                that needs to feel effortless, let&apos;s talk.
               </p>
             </Reveal>
 
