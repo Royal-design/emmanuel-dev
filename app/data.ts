@@ -456,7 +456,7 @@ export const contactInfo = {
   email: "olowookereoluwaseun25@gmail.com",
   phone: "+234 915 187 9027",
   whatsapp: "https://wa.me/2349151879027",
-  location: "Ibadan, Nigeria",
+  location: "Osun State, Nigeria",
   coords: "7.3775° N, 3.9470° E",
   github: "https://github.com/Royal-design",
   linkedin: "https://www.linkedin.com/in/oluwaseun-olowookere-869262216",
@@ -465,7 +465,15 @@ export const contactInfo = {
 };
 
 export const stack = {
-  languages: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Python", "SCSS", "JSON"],
+  languages: [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "SCSS",
+    "JSON",
+  ],
   frameworks: [
     "Next.js",
     "React",

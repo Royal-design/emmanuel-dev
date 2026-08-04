@@ -1,7 +1,7 @@
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { MotionProvider } from "@/components/motion-provider";
 import { PagePreloader } from "@/components/PagePreloader";
 import { ThemeProvider } from "@/components/theme-provider";
-import { MotionProvider } from "@/components/motion-provider";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { bricolage, inter, jetbrainsMono } from "./fonts/fonts";
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "PostgreSQL",
     "Prisma",
     "Web Developer Nigeria",
-    "Full-Stack Developer Ibadan",
+    "Full-Stack Developer Osun State",
     "React Portfolio",
     "Next.js Portfolio",
     "JavaScript Developer",
@@ -118,7 +118,7 @@ const personJsonLd = {
   description,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Ibadan",
+    addressLocality: "Osun State",
     addressCountry: "Nigeria",
   },
   sameAs: [
