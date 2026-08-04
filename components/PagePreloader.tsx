@@ -43,7 +43,7 @@ export function PagePreloader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            Oluwaseun<span className="text-accent">.</span>
+            Emmanuel<span className="text-accent">.</span>
           </motion.p>
 
           <div className="mt-7 h-px w-48 overflow-hidden bg-line">

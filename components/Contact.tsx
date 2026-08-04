@@ -20,7 +20,7 @@ const socials = [
     href: contactInfo.linkedin,
     icon: FaLinkedinIn,
     label: "LinkedIn",
-    value: "Oluwaseun Olowookere",
+    value: "Emmanuel Olowookere",
   },
   {
     href: contactInfo.whatsapp,

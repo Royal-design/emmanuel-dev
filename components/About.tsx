@@ -25,7 +25,7 @@ const highlights = [
 ];
 
 const personalInfo = [
-  { icon: FiUser, label: "Name", value: "Olowookere Oluwaseun" },
+  { icon: FiUser, label: "Name", value: "Olowookere Emmanuel" },
   {
     icon: FiMail,
     label: "Email",
@@ -42,12 +42,14 @@ const services = [
   {
     icon: FiCode,
     title: "Full-Stack Development",
-    description: "React, Next.js, Node.js, NestJS & Express applications",
+    description:
+      "React, Next.js, Node.js, NestJS, Express & FastAPI applications",
   },
   {
     icon: FiGitBranch,
     title: "Backend & APIs",
-    description: "REST APIs, Express & NestJS services, PostgreSQL & Prisma",
+    description:
+      "REST APIs with Express, NestJS & FastAPI, PostgreSQL & Prisma",
   },
   {
     icon: FiLayout,
@@ -91,12 +93,12 @@ export function About() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <p className="mt-6 max-w-xl leading-relaxed text-ink-2">
+<p className="mt-6 max-w-xl leading-relaxed text-ink-2">
                 I specialize in React, Next.js and TypeScript on the front end,
-                with Node.js, Express, NestJS and PostgreSQL on the back end. My
-                work spans AI-powered products, enterprise dashboards,
-                e-commerce platforms and full-stack applications — each one
-                shipped to production and used by real people.
+                with Node.js, Express, NestJS, Python, FastAPI and PostgreSQL
+                on the back end. My work spans AI-powered products, enterprise
+                dashboards, e-commerce platforms and full-stack applications —
+                each one shipped to production and used by real people.
               </p>
             </Reveal>
 

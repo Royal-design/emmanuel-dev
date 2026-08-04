@@ -78,7 +78,7 @@ export default function Hero() {
               <h1 className="font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.92] font-bold tracking-tight [overflow-wrap:anywhere]">
                 <span className="block overflow-hidden pb-[0.08em]">
                   <motion.span variants={lineReveal} className="block">
-                    Oluwaseun
+                    Emmanuel
                   </motion.span>
                 </span>
                 <span className="block overflow-hidden pb-[0.2em] pt-[0.04em]">
@@ -95,7 +95,7 @@ export default function Hero() {
                 I turn complex products into fast, accessible, beautifully
                 engineered software — across the entire stack. With React,
                 Next.js, TypeScript and Node.js on the front, and Express,
-                NestJS, Python and PostgreSQL behind the scenes, I build
+                NestJS, FastAPI, Python and PostgreSQL behind the scenes, I build
                 products that feel obvious to use.
               </motion.p>
 
@@ -165,7 +165,7 @@ export default function Hero() {
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
                     src="/portrait.webp"
-                    alt="Portrait of Oluwaseun Olowookere"
+                    alt="Portrait of Emmanuel Olowookere"
                     fill
                     priority
                     sizes="(max-width: 1024px) 320px, 340px"
@@ -176,7 +176,7 @@ export default function Hero() {
                 <figcaption className="flex items-center justify-between gap-3 border-t border-line px-4 py-3">
                   <div className="min-w-0">
                     <p className="truncate font-mono text-[11px] tracking-[0.14em] text-ink uppercase">
-                      O. Olowookere
+                      E. Olowookere
                     </p>
                     <p className="mt-0.5 truncate font-mono text-[10px] text-ink-3">
                       Full-Stack Engineer — Osun State, NG

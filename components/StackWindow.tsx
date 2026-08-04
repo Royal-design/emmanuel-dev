@@ -24,7 +24,7 @@ export function StackWindow() {
                 <span className="h-3 w-3 rounded-full bg-[#28c840]" />
               </div>
               <span className="truncate font-mono text-[11px] tracking-[0.14em] text-ink-2 uppercase">
-                stack.ts — oluwaseun
+                stack.ts — emmanuel
               </span>
               <span className="rounded-full border border-line px-2 py-0.5 font-mono text-[10px] tracking-[0.12em] text-ink-3 uppercase">
                 full-stack
@@ -50,7 +50,7 @@ export function StackWindow() {
                   <code>
                     <span className="text-ink-3">{"// "}</span>
                     <span className="text-ink-2">
-                      oluwaseun olowookere — full-stack engineer
+                      emmanuel olowookere — full-stack engineer
                     </span>
                     {"\n"}
                     <span className="text-ink-3">{"// "}</span>

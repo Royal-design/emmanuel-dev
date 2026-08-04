@@ -21,7 +21,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link href="#top" className="font-display text-2xl font-semibold tracking-tight">
-              Oluwaseun<span className="text-accent">.</span>
+              Emmanuel<span className="text-accent">.</span>
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink-2">
               Full-stack engineer building fast, accessible web applications —
@@ -94,7 +94,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line pt-6 md:flex-row md:items-center">
           <p className="font-mono text-[11px] tracking-[0.08em] text-ink-3">
-            © {currentYear} Oluwaseun Olowookere. Designed & built with Next.js.
+            © {currentYear} Emmanuel Olowookere. Designed & built with Next.js.
           </p>
           <a
             href="#top"

@@ -67,7 +67,7 @@ export default function Navbar() {
             className="font-display text-xl font-semibold tracking-tight"
             onClick={() => setOpen(false)}
           >
-            Oluwaseun<span className="text-accent">.</span>
+            Emmanuel<span className="text-accent">.</span>
           </Link>
 
           <nav

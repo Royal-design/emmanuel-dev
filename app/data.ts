@@ -452,7 +452,7 @@ export const projects: Project[] = [
 export const otherProjects: Project[] = [];
 
 export const contactInfo = {
-  name: "Oluwaseun Olowookere",
+  name: "Emmanuel Olowookere",
   email: "olowookereoluwaseun25@gmail.com",
   phone: "+234 915 187 9027",
   whatsapp: "https://wa.me/2349151879027",

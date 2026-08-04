@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 /* eslint-disable @next/next/no-img-element */
 
 export const runtime = "edge";
-export const alt = "Oluwaseun Olowookere - Full-Stack Engineer";
+export const alt = "Emmanuel Olowookere - Full-Stack Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -47,7 +47,7 @@ export default function Image() {
               lineHeight: 1,
             }}
           >
-            <span>Oluwaseun</span>
+            <span>Emmanuel</span>
             <span>Olowookere</span>
           </div>
           <div
@@ -75,7 +75,7 @@ export default function Image() {
         >
           <img
             src="https://emmanuel-developer.vercel.app/avatar.png"
-            alt="Oluwaseun Olowookere"
+            alt="Emmanuel Olowookere"
             width={300}
             height={300}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}

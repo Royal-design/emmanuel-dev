@@ -1,4 +1,4 @@
-# Oluwaseun Olowookere – Portfolio
+# Emmanuel Olowookere – Portfolio
 
 Welcome to my personal portfolio! This project showcases my work as a **Full-Stack Developer** with a passion for building responsive, accessible, and visually engaging web applications — from pixel-perfect frontends to robust backends and databases. It highlights my projects, skills, experience, and provides a way to get in touch.
 
