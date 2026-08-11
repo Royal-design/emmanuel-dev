@@ -373,7 +373,7 @@ export function Projects() {
           index="04"
           label="Selected Work"
           title="Products, shipped."
-          note="Fourteen projects — full-stack platforms, AI tools and personal builds"
+          note="Fifteen projects — full-stack platforms, AI tools and personal builds"
         />
 
         <Reveal>
